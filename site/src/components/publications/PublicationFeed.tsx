@@ -42,7 +42,7 @@ export function PublicationFeed() {
 
       {groups.map(([year, items]) => (
         <section key={year} aria-labelledby={`y${year}`} className="mt-10">
-          <h2 id={`y${year}`} className="border-b border-steel pb-2 text-xl font-bold">
+          <h2 id={`y${year}`} className="border-b border-steel pb-2 text-xl font-semibold">
             {year}
           </h2>
           <ol className="mt-4 space-y-4">

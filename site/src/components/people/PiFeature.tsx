@@ -5,13 +5,13 @@ export default function PiFeature() {
   return (
     <section className="py-12" aria-labelledby="pi-name">
       <Container>
-        <h2 className="text-2xl font-bold tracking-tight">{PI.role}</h2>
+        <h2 className="text-2xl font-semibold">{PI.role}</h2>
         <div className="mt-8 grid gap-8 md:grid-cols-[16rem_1fr_14rem]">
           {PI.photo && (
             <img src={PI.photo} alt={PI.name} width={256} height={320} style={{ objectPosition: PI.photoPos }} className="aspect-[4/5] w-64 object-cover" />
           )}
           <div>
-            <h3 id="pi-name" className="text-xl font-bold">{PI.name}</h3>
+            <h3 id="pi-name" className="text-xl font-semibold">{PI.name}</h3>
             <p className="mt-1 text-sm font-semibold">
               {PI.title}, {PI.dept}
             </p>

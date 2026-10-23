@@ -7,7 +7,7 @@ export default function PeopleGrid({ title, people }: { title: string; people: P
   return (
     <section className="border-t border-steel py-12" aria-labelledby={headingId}>
       <Container>
-        <h2 id={headingId} className="text-2xl font-bold tracking-tight">
+        <h2 id={headingId} className="text-2xl font-semibold">
           {title}
         </h2>
         <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4">

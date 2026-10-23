@@ -1,5 +1,5 @@
-// Builds public/anatomy/pathway.glb from BodyParts3D OBJ meshes.
-// Usage: node scripts/build-anatomy.mjs <bodyparts3d parts dir>
+// Builds public/anatomy/pathway.glb from BodyParts3D OBJ meshes and a Brainder cortical surface.
+// Usage: node scripts/build-anatomy.mjs <bodyparts3d parts dir> <brainder pial_Full_obj dir>
 // Expects vert.tsv (atlas to L2) and skel.tsv (other upper body bones) beside the parts dir.
 // Sources and licenses: see public/anatomy/CREDITS.txt.
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
@@ -11,7 +11,7 @@ import { MeshoptEncoder, MeshoptSimplifier } from 'meshoptimizer'
 import * as THREE from 'three'
 import { mergeGeometries, mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 
-const [partsDir] = process.argv.slice(2)
+const [partsDir, pialDir] = process.argv.slice(2)
 
 // BodyParts3D element files (FJ ids) per group, from partof/isa_element_parts.txt.
 const GROUPS = {
@@ -106,8 +106,45 @@ const axonCurve = new THREE.CatmullRomCurve3([
 ])
 const axonGeo = new THREE.TubeGeometry(axonCurve, 120, 1.2, 8, false)
 
+// Cortex: Brainder pial surfaces (MRI of one subject, FreeSurfer RAS mm), which keep real gyri
+// and sulci. RAS to this frame is (-x, z, y). Scaled and centred onto the BodyParts3D cortex so
+// the BodyParts3D cerebellum and brainstem still sit underneath it.
+function pialCortex(reference) {
+  const hemis = ['lh', 'rh'].map((h) => {
+    const pos = []
+    const idx = []
+    for (const line of readFileSync(join(pialDir, `${h}.pial.obj`), 'utf8').split('\n')) {
+      if (line.startsWith('v ')) {
+        const [, x, y, z] = line.trim().split(/\s+/).map(Number)
+        pos.push(-x, z, y)
+      } else if (line.startsWith('f ')) {
+        idx.push(...line.trim().split(/\s+/).slice(1, 4).map((t) => parseInt(t) - 1))
+      }
+    }
+    // Decimate each hemisphere to ~60k triangles before export.
+    const [kept] = MeshoptSimplifier.simplify(new Uint32Array(idx), new Float32Array(pos), 3, 180000, 0.01)
+    const g = new THREE.BufferGeometry()
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3))
+    g.setIndex([...kept])
+    return g
+  })
+  const cortex = mergeGeometries(hemis)
+  cortex.computeBoundingBox()
+  reference.computeBoundingBox()
+  const a = cortex.boundingBox.getSize(new THREE.Vector3())
+  const b = reference.boundingBox.getSize(new THREE.Vector3())
+  const s = (b.x / a.x + b.y / a.y + b.z / a.z) / 3
+  const ca = cortex.boundingBox.getCenter(new THREE.Vector3())
+  const cb = reference.boundingBox.getCenter(new THREE.Vector3())
+  cortex.translate(-ca.x, -ca.y, -ca.z)
+  cortex.scale(s, s, s)
+  cortex.translate(cb.x, cb.y, cb.z)
+  return cortex
+}
+
+await MeshoptSimplifier.ready
 const meshes = {
-  cortex: group(GROUPS.cortex.split(' ')),
+  cortex: pialCortex(group(GROUPS.cortex.split(' '))),
   cerebellum: group(GROUPS.cerebellum.split(' ')),
   brainstem,
   cord: cordGeo,

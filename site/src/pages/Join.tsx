@@ -5,7 +5,7 @@ import { LAB, MASTERS, MENTORSHIP, PHD, POSITIONS } from '../content/lab'
 function Block({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} aria-labelledby={`${id}-h`} className="scroll-mt-20 border-t border-steel py-12 first:border-t-0">
-      <h2 id={`${id}-h`} className="text-2xl font-bold tracking-tight">
+      <h2 id={`${id}-h`} className="text-2xl font-semibold">
         {title}
       </h2>
       {children}
@@ -42,7 +42,7 @@ export default function Join() {
           <div className="mt-6 grid gap-8 md:grid-cols-3">
             {MASTERS.areas.map((a) => (
               <div key={a.num}>
-                <h3 className="font-bold">{a.title}</h3>
+                <h3 className="font-semibold">{a.title}</h3>
                 <p className="mt-2 font-serif leading-relaxed text-body">{a.body}</p>
               </div>
             ))}

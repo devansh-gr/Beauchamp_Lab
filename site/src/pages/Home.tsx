@@ -14,7 +14,7 @@ function Section({ id, title, children }: { id: string; title: string; children:
   return (
     <section id={id} aria-labelledby={`${id}-h`} className="border-t border-steel py-16 sm:py-20">
       <Container>
-        <h2 id={`${id}-h`} className="text-3xl font-bold tracking-tight">
+        <h2 id={`${id}-h`} className="text-3xl font-semibold">
           {title}
         </h2>
         {children}
@@ -30,7 +30,7 @@ export default function Home() {
       <section className="pt-28 pb-16 sm:pb-20">
         <Container className="grid gap-12 lg:grid-cols-[2fr_1fr]">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{LAB.name}</h1>
+            <h1 className="text-4xl font-semibold sm:text-5xl">{LAB.name}</h1>
             <p className="mt-3 text-lg font-semibold text-iron">{LAB.tagline}</p>
             <p className="mt-8 max-w-2xl font-serif text-lg leading-relaxed text-body">{LAB.overview}</p>
           </div>
@@ -78,7 +78,7 @@ export default function Home() {
             <img src={PI.photo} alt={PI.name} width={256} height={320} style={{ objectPosition: PI.photoPos }} className="aspect-[4/5] w-64 object-cover" />
           )}
           <div>
-            <h3 className="text-xl font-bold">{PI.name}</h3>
+            <h3 className="text-xl font-semibold">{PI.name}</h3>
             <p className="mt-1 text-sm font-semibold text-ink-2">
               {PI.title}, {PI.dept}
             </p>
@@ -102,7 +102,7 @@ export default function Home() {
             <li key={p.slug} className="grid gap-2 py-8 md:grid-cols-[3rem_1fr]">
               <span className="text-sm font-bold text-red">{p.num}</span>
               <div>
-                <h3 className="text-xl font-bold tracking-tight">
+                <h3 className="text-xl font-semibold">
                   <Link to={`/research#${p.slug}`} className="hover:text-red">
                     {p.title}
                   </Link>

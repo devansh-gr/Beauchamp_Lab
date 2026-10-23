@@ -6,12 +6,13 @@
   /* Body copy grey, as on CMU Engineering lab pages. */
   --color-body: #4b4b4b;
   --color-ink-3: #1f1f21;
-  --color-paper: #ffffff;
-  --color-paper-2: #f5f5f5;
+  --color-paper: #faf7f0;
+  --color-paper-2: #f1ece1;
   --color-red: #c41230;
   --color-red-bright: #ef3a47;
   --color-iron: #6d6e71;
-  --color-steel: #e0e0e0;
+  /* Rules on cream: CMU Steel Gray reads too cold, so a warm equivalent. */
+  --color-steel: #e2dccf;
   --color-signal: #c41230;
 
   --font-sans: 'Open Sans Variable', Helvetica, ui-sans-serif, system-ui, sans-serif;
@@ -28,6 +29,13 @@
   }
   body {
     font-family: var(--font-sans);
+  }
+  /* Headings in Source Serif, as on cmu.edu; Open Sans stays for nav and small labels. */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    letter-spacing: normal;
   }
   ::selection {
     background: var(--color-red);

@@ -20,7 +20,7 @@ export function PageHeader({ eyebrow, title, intro }: { eyebrow?: string; title:
     <header className="border-b border-steel pt-28 pb-10">
       <Container>
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h1 className="mt-2 text-4xl font-bold tracking-tight text-ink-2 sm:text-5xl">{title}</h1>
+        <h1 className="mt-2 text-4xl font-semibold text-ink-2 sm:text-5xl">{title}</h1>
         {intro && <p className="mt-6 max-w-3xl font-serif text-lg leading-relaxed text-body">{intro}</p>}
       </Container>
     </header>

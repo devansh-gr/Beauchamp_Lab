@@ -1,6 +1,10 @@
 pathway.glb is built by scripts/build-anatomy.mjs from:
 
-Brain, brainstem, upper body skeleton (vertebrae, rib cage, sternum, shoulder girdle, arms, hands, pelvis), right biceps brachii:
+Cerebral cortex (pial surfaces, one subject's MRI, FreeSurfer), scaled onto the BodyParts3D brain:
+  Brain for Blender, Anderson M. Winkler, https://brainder.org/research/brain-for-blender/
+  Licensed under CC Attribution-ShareAlike 3.0 Unported.
+
+Cerebellum, brainstem, upper body skeleton (vertebrae, rib cage, sternum, shoulder girdle, arms, hands, pelvis), right biceps brachii:
   BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan.
   https://dbarchive.biosciencedbc.jp/en/bodyparts3d/
   (DBCLS now lists the current release under CC BY 4.0; the 2011 OBJ files used here carry the BY-SA 2.1 JP notice.)
