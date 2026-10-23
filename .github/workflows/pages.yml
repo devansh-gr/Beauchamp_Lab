@@ -16,6 +16,8 @@ concurrency:
 
 jobs:
   deploy:
+    # Only the public preview repo has Pages; the private working repo skips this.
+    if: github.repository == 'devansh-gr/Beauchamp_Lab'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -35,7 +37,8 @@ jobs:
         env:
           BASE: /${{ github.event.repository.name }}/
       # Preview only: keep it out of search results so it never competes with beauchamplab.org.
-      - run: printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
+      - run: |
+          printf 'User-agent: *\nDisallow: /\n' > dist/robots.txt
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
