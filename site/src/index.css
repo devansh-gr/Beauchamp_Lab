@@ -6,13 +6,13 @@
   /* Body copy grey, as on CMU Engineering lab pages. */
   --color-body: #4b4b4b;
   --color-ink-3: #1f1f21;
-  --color-paper: #faf7f0;
-  --color-paper-2: #f1ece1;
+  --color-paper: #f6f0e1;
+  --color-paper-2: #ece4d1;
   --color-red: #c41230;
   --color-red-bright: #ef3a47;
   --color-iron: #6d6e71;
   /* Rules on cream: CMU Steel Gray reads too cold, so a warm equivalent. */
-  --color-steel: #e2dccf;
+  --color-steel: #ddd3bf;
   --color-signal: #c41230;
 
   --font-sans: 'Open Sans Variable', Helvetica, ui-sans-serif, system-ui, sans-serif;
