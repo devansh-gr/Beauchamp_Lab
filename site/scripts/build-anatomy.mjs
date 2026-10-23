@@ -1,5 +1,6 @@
-// Builds public/anatomy/pathway.glb from BodyParts3D OBJ meshes and a NeuroMorpho SWC.
-// Usage: node scripts/build-anatomy.mjs <bodyparts3d parts dir> <motoneuron.swc>
+// Builds public/anatomy/pathway.glb from BodyParts3D OBJ meshes.
+// Usage: node scripts/build-anatomy.mjs <bodyparts3d parts dir>
+// Expects vert.tsv (atlas to L2) and skel.tsv (other upper body bones) beside the parts dir.
 // Sources and licenses: see public/anatomy/CREDITS.txt.
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -10,7 +11,7 @@ import { MeshoptEncoder, MeshoptSimplifier } from 'meshoptimizer'
 import * as THREE from 'three'
 import { mergeGeometries, mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js'
 
-const [partsDir, swcPath] = process.argv.slice(2)
+const [partsDir] = process.argv.slice(2)
 
 // BodyParts3D element files (FJ ids) per group, from partof/isa_element_parts.txt.
 const GROUPS = {
@@ -18,10 +19,12 @@ const GROUPS = {
   cerebellum: 'FJ1781 FJ1830',
   brainstem: 'FJ1738 FJ1762 FJ1769 FJ1770 FJ1775 FJ1779 FJ1810 FJ1817 FJ1822 FJ1826 FJ1831',
   biceps: 'FJ1512 FJ1478',
-  humerus: 'FJ3368',
 }
 // Atlas to L2, top to bottom.
-const VERTEBRAE = readFileSync(join(partsDir, '..', 'vert.tsv'), 'utf8').trim().split('\n').map((l) => l.split('\t')[1])
+const elements = (f) => [...new Set(readFileSync(join(partsDir, '..', f), 'utf8').trim().split('\n').map((l) => l.split('\t')[1]))]
+const VERTEBRAE = elements('vert.tsv')
+// Rib cage, sternum, clavicles, scapulae, arms, hands, L3 to L5, sacrum, hip bones. No skull.
+const SKELETON = elements('skel.tsv')
 
 // BodyParts3D is in mm, z up. Convert to y up.
 const toY = (x, y, z) => [x, z, -y]
@@ -62,7 +65,8 @@ function canalCentre(geo) {
       if (gap > best.gap) best = { gap, z: (zs[i] + zs[i + 1]) / 2, y: midY + dy }
     }
   }
-  return new THREE.Vector3(0, best.y, best.z)
+  // The axis (dens) can block every ray; skip vertebrae with no canal found.
+  return best.gap ? new THREE.Vector3(0, best.y, best.z) : null
 }
 
 const vertebrae = VERTEBRAE.map(readObj)
@@ -71,7 +75,8 @@ brainstem.computeBoundingBox()
 const bsBottom = brainstem.boundingBox.min.y
 
 // Cord: tapered tube from the base of the brainstem through each canal centre to L1/L2 (conus).
-const pts = vertebrae.map(canalCentre)
+const canals = vertebrae.map(canalCentre)
+const pts = canals.filter(Boolean)
 const first = pts[0]
 pts.unshift(new THREE.Vector3(0, bsBottom + 6, first.z + 2))
 const curve = new THREE.CatmullRomCurve3(pts)
@@ -92,7 +97,7 @@ const cordGeo = new THREE.TubeGeometry(curve, 200, 1, 16, false)
 const biceps = group(GROUPS.biceps.split(' '))
 biceps.computeBoundingBox()
 const bc = biceps.boundingBox.getCenter(new THREE.Vector3())
-const c6 = pts[6]
+const c6 = canals[5]
 const axonCurve = new THREE.CatmullRomCurve3([
   c6,
   c6.clone().add(new THREE.Vector3(-25, -8, 10)),
@@ -101,56 +106,14 @@ const axonCurve = new THREE.CatmullRomCurve3([
 ])
 const axonGeo = new THREE.TubeGeometry(axonCurve, 120, 1.2, 8, false)
 
-// Motoneuron from SWC (um). Placed beside C6, magnified so its dendritic tree spans ~60 mm.
-function swcGeometry(path) {
-  const rows = new Map()
-  for (const l of readFileSync(path, 'utf8').split('\n')) {
-    if (!l.trim() || l.startsWith('#')) continue
-    const [id, type, x, y, z, r, parent] = l.trim().split(/\s+/).map(Number)
-    rows.set(id, { type, v: new THREE.Vector3(x, y, z), r, parent })
-  }
-  const box = new THREE.Box3()
-  for (const n of rows.values()) box.expandByPoint(n.v)
-  const soma = [...rows.values()].find((n) => n.type === 1).v.clone()
-  const scale = 60 / box.getSize(new THREE.Vector3()).length()
-  const parts = []
-  for (const n of rows.values()) {
-    if (n.type === 1 && n.parent === -1) {
-      const s = new THREE.SphereGeometry(Math.max(n.r * scale, 1.2), 16, 12)
-      parts.push(s.toNonIndexed())
-      continue
-    }
-    const p = rows.get(n.parent)
-    if (!p) continue
-    const a = p.v.clone().sub(soma).multiplyScalar(scale)
-    const b = n.v.clone().sub(soma).multiplyScalar(scale)
-    const len = a.distanceTo(b)
-    if (len < 1e-4) continue
-    const r = Math.max(n.r * scale, 0.12)
-    const cyl = new THREE.CylinderGeometry(r, Math.max(p.r * scale, 0.12), len, 6, 1, true)
-    cyl.translate(0, len / 2, 0)
-    cyl.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize()))
-    cyl.translate(a.x, a.y, a.z)
-    parts.push(cyl.toNonIndexed())
-  }
-  for (const g of parts) g.deleteAttribute('uv')
-  const g = mergeGeometries(parts)
-  g.deleteAttribute('normal')
-  return mergeVertices(g, 1e-3)
-}
-const neuron = swcGeometry(swcPath)
-neuron.translate(c6.x + 110, c6.y, c6.z + 10)
-
 const meshes = {
   cortex: group(GROUPS.cortex.split(' ')),
   cerebellum: group(GROUPS.cerebellum.split(' ')),
   brainstem,
   cord: cordGeo,
-  spine: mergeGeometries(vertebrae),
+  skeleton: mergeGeometries([...vertebrae, ...SKELETON.map(readObj)]),
   axon: axonGeo,
-  motoneuron: neuron,
   biceps,
-  humerus: group(GROUPS.humerus.split(' ')),
 }
 
 // Centre the whole figure on the origin.

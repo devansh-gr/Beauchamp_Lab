@@ -5,24 +5,22 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 import type { PathwayStoryProps } from '../types'
 
-// Anatomy: BodyParts3D (DBCLS) and NeuroMorpho.Org v_e_moto4. Built by scripts/build-anatomy.mjs.
+// Anatomy: BodyParts3D (DBCLS). Built by scripts/build-anatomy.mjs.
 const URL = '/anatomy/pathway.glb'
 
 type Step = PathwayStoryProps['step']
-type Part = 'cortex' | 'cerebellum' | 'brainstem' | 'cord' | 'spine' | 'axon' | 'motoneuron' | 'biceps' | 'humerus' | 'grid'
+type Part = 'cortex' | 'cerebellum' | 'brainstem' | 'cord' | 'skeleton' | 'axon' | 'biceps' | 'grid'
 
 const ACTIVE: Record<Step, Part[]> = {
   0: ['cortex'],
   1: ['brainstem', 'cord'],
-  2: ['motoneuron'],
-  3: ['axon', 'biceps', 'grid'],
+  2: ['axon', 'biceps', 'grid'],
 }
 // Parts framed by the camera at each step.
 const FRAME: Record<Step, Part[]> = {
   0: ['cortex', 'cerebellum'],
   1: ['cortex', 'cord'],
-  2: ['motoneuron'],
-  3: ['cord', 'biceps'],
+  2: ['cord', 'biceps'],
 }
 
 const RED = new THREE.Color('#ef3a47')
@@ -89,7 +87,7 @@ function Rig({ scene, step, reduced }: { scene: THREE.Group; step: Step; reduced
     scene.traverse((o) => {
       if (!(o instanceof THREE.Mesh)) return
       const part = o.name as Part
-      const bone = part === 'spine' || part === 'humerus'
+      const bone = part === 'skeleton'
       const on = ACTIVE[step].includes(part)
       const mat = o.material as THREE.MeshStandardMaterial
       if (part === 'grid') {
@@ -129,7 +127,7 @@ export default function PathwayStory({ step, className = '' }: PathwayStoryProps
   const reduced = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
   return (
-    <div className={className} role="img" aria-label="3D anatomy: brain, brainstem and spinal cord, a spinal motoneuron, and the biceps with an 8 by 8 surface EMG grid.">
+    <div className={className} role="img" aria-label="3D anatomy over an upper body skeleton: brain, brainstem and spinal cord, and the biceps with an 8 by 8 surface EMG grid.">
       {scene && (
         <Canvas frameloop="demand" dpr={[1, 2]} camera={{ fov: 35, near: 1, far: 5000, position: [300, 200, 900] }}>
           <hemisphereLight args={['#ffffff', '#202024', 1.1]} />

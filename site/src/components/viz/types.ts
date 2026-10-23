@@ -9,7 +9,7 @@ export type RecruitmentRasterProps = VizProps
 /** Slider for monoaminergic drive; input-output curve with PIC hysteresis and delta-F. Light background. */
 export type NeuromodDialProps = VizProps
 
-/** 3D anatomy, camera moves per step: 0 brain, 1 brainstem/spinal cord, 2 motoneuron, 3 muscle + HD-sEMG. Dark background. */
+/** 3D anatomy over an upper body skeleton, camera moves per step: 0 brain, 1 brainstem/spinal cord, 2 muscle + HD-sEMG. Dark background. */
 export interface PathwayStoryProps extends VizProps {
-  step: 0 | 1 | 2 | 3
+  step: 0 | 1 | 2
 }

@@ -10,19 +10,18 @@ const p1 = sentences(PROJECTS[0].body)
 const STEPS = [
   { label: 'Brain', text: ov[0] },
   { label: 'Spinal cord', text: ov[1] },
-  { label: 'Motoneuron', text: p1[0] },
-  { label: 'Muscle', text: p1[1] },
+  { label: 'Muscle', text: `${p1[0]} ${p1[1]}` },
 ]
 
 export default function Story() {
-  const [step, setStep] = useState<0 | 1 | 2 | 3>(0)
+  const [step, setStep] = useState<0 | 1 | 2>(0)
   const refs = useRef<(HTMLLIElement | null)[]>([])
 
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) setStep(Number((e.target as HTMLElement).dataset.i) as 0 | 1 | 2 | 3)
+          if (e.isIntersecting) setStep(Number((e.target as HTMLElement).dataset.i) as 0 | 1 | 2)
         }
       },
       { rootMargin: '-45% 0px -45% 0px' },
@@ -73,9 +72,8 @@ export default function Story() {
       </Container>
       <Container className="pb-12">
         <p className="max-w-3xl text-xs leading-relaxed text-paper/50">
-          Anatomy from BodyParts3D, The Database Center for Life Science (CC BY-SA 2.1 JP). Motoneuron: cat spinal alpha
-          motoneuron v_e_moto4, Cullheim et al. 1987, via NeuroMorpho.Org (CC BY 4.0), shown magnified. Spinal cord path,
-          motor axon and electrode grid are schematic.
+          Anatomy from BodyParts3D, The Database Center for Life Science (CC BY-SA 2.1 JP). Spinal cord path, motor axon
+          and electrode grid are schematic.
         </p>
       </Container>
     </section>
