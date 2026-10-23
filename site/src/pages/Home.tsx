@@ -4,6 +4,7 @@ import { PathwayFigure } from '../components/research/ProjectViz'
 import { Citation } from '../components/publications/Citation'
 import { FOCUS_AREAS, LAB, PI, PROJECTS } from '../content/lab'
 import { PUBLICATIONS } from '../content/publications'
+import { asset } from '../lib/asset'
 
 const AFFILIATIONS = [
   { label: 'Biomedical Engineering', href: 'https://www.cmu.edu/bme/' },
@@ -29,7 +30,16 @@ export default function Home() {
     <>
       <section className="pt-28 pb-16 sm:pb-20">
         <Container className="grid gap-12 lg:grid-cols-[2fr_1fr]">
-          <div>
+          <div className="relative isolate">
+            {/* Lab symbol as a faint underlay behind the title. */}
+            <img
+              src={asset('/brand/symbol.png')}
+              alt=""
+              aria-hidden="true"
+              width={870}
+              height={506}
+              className="pointer-events-none absolute -left-8 -top-6 -z-10 w-[min(520px,90vw)] opacity-[0.08]"
+            />
             <h1 className="text-4xl font-semibold sm:text-5xl">{LAB.name}</h1>
             <p className="mt-3 text-lg font-semibold text-iron">{LAB.tagline}</p>
             <p className="mt-8 max-w-2xl font-serif text-lg leading-relaxed text-body">{LAB.overview}</p>
