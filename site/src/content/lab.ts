@@ -48,10 +48,11 @@ export const PI: Person & { title: string; dept: string; bio: string[] } = {
   ],
 }
 
+// Ordered by seniority (PhD, MS, undergrad), then last name.
 export const MEMBERS: Person[] = [
   { slug: 'andy-vo', name: 'Andy Vo', role: 'BME PhD Student', likes: 'Likes: climbing, video games, and sensation', photo: '/people/andy-vo.jpg', photoPos: '50% 80%' },
-  { slug: 'kate-mould', name: 'Kate Mould', role: 'BME MS Student' },
   { slug: 'anabelle-creveling', name: 'Anabelle Creveling', role: 'MINT MS Student' },
+  { slug: 'kate-mould', name: 'Kate Mould', role: 'BME MS Student' },
   { slug: 'vicky-yang', name: 'Vicky Yang', role: 'MINT MS Student', likes: 'Likes: theater, photography, and spending time with my cat Kokomi.', photo: '/people/vicky-yang.jpg', photoPos: '50% 58%' },
   { slug: 'ben-kadison', name: 'Ben Kadison', role: 'Undergraduate Researcher', likes: 'Likes: espresso, traveling, decomposing time-series data', photo: '/people/ben-kadison.jpg', photoPos: '50% 52%' },
 ]
