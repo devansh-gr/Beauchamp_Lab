@@ -140,7 +140,7 @@ export default function NeuromodDial({ className }: NeuromodDialProps) {
             <span>High</span>
           </div>
         </div>
-        <div className="text-right" aria-live="polite">
+        <div className="text-right">
           <div className="font-mono text-[11px] tracking-wider text-iron uppercase">ΔF estimate</div>
           <div className="font-mono text-5xl leading-none tabular-nums">
             {df.toFixed(1)}

@@ -5,12 +5,12 @@ import { ContactForm } from '../components/contact/ContactForm'
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-ink pt-40 pb-24 text-paper">
+    <div className="min-h-screen bg-ink pt-40 pb-24 text-paper">
       <Container className="grid gap-16 lg:grid-cols-2 lg:gap-24">
         <Reveal>
           <Eyebrow className="text-red-bright">Contact</Eyebrow>
           <h1 className="mt-6 text-display font-medium">Get connected.</h1>
-          <p className="mt-8 max-w-md font-serif text-xl leading-relaxed text-paper/70">Reach out about anything.</p>
+          <p className="mt-8 max-w-md font-serif text-xl leading-relaxed text-paper/70">{LAB.contactIntro}</p>
           <a
             href={`mailto:${LAB.email}`}
             className="mt-10 inline-block break-all font-mono text-sm text-paper underline decoration-red-bright underline-offset-4 hover:text-red-bright"
@@ -27,6 +27,6 @@ export default function Contact() {
           <ContactForm />
         </Reveal>
       </Container>
-    </main>
+    </div>
   )
 }

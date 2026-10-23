@@ -8,6 +8,8 @@ export const LAB = {
   tagline: 'Neuromotor systems and technology',
   university: 'Carnegie Mellon University',
   email: 'jabeauchamp@cmu.edu',
+  joinIntro: 'The Output Layer Lab is always looking to connect with curious, motivated researchers across levels of experience.',
+  contactIntro: 'Reach out about anything.',
   formspree: 'https://formspree.io/f/mjgnvdzg',
   hero:
     'We study how the nervous system generates and controls movement, using spinal motoneurons (the output layer of the neuromotor system) to estimate upstream signaling from spinal, cortical, and subcortical sources. We translate that understanding into technologies for rehabilitation, assistive devices, and human-machine interfaces.',

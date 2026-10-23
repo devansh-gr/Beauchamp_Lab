@@ -34,7 +34,11 @@ export function ProjectViz({ viz }: { viz: Project['viz'] }) {
   return (
     <Suspense fallback={<div className={`${cls} animate-pulse bg-current opacity-5`} aria-hidden />}>
       {viz === 'RecruitmentRaster' && <RecruitmentRaster className={cls} />}
-      {viz === 'NeuromodDial' && <NeuromodDial className={cls} />}
+      {viz === 'NeuromodDial' && (
+        <div className="bg-paper p-4 text-ink-2 sm:p-6">
+          <NeuromodDial className={cls} />
+        </div>
+      )}
       {viz === 'PathwayStory' && <Pathway />}
     </Suspense>
   )

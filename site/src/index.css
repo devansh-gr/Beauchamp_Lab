@@ -53,3 +53,8 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Iron (#6d6e71) passes on paper but not on ink: lift it inside dark sections. */
+.bg-ink .text-iron {
+  color: #9a9b9e;
+}

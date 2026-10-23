@@ -32,14 +32,14 @@ export default function Stats() {
       <Container>
         <dl className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-5">
           {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.07}>
-              <div className="border-t border-paper/20 pt-4">
-                <dd className="font-mono text-5xl font-medium tracking-tight text-red-bright sm:text-6xl">
+            <div key={s.label} className="flex flex-col-reverse justify-end border-t border-paper/20 pt-4">
+              <dt className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-paper/70">{s.label}</dt>
+              <dd className="font-mono text-5xl font-medium tracking-tight text-red-bright sm:text-6xl">
+                <Reveal delay={i * 0.07}>
                   <Count to={s.n} />
-                </dd>
-                <dt className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-paper/60">{s.label}</dt>
-              </div>
-            </Reveal>
+                </Reveal>
+              </dd>
+            </div>
           ))}
         </dl>
       </Container>

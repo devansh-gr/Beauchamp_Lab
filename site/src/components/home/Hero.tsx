@@ -76,8 +76,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mt-8 font-mono text-lg text-paper/80 sm:text-2xl"
-          aria-label={`to understand ${WORDS.join(', ')}`}
         >
+          <span className="sr-only">{`to understand ${WORDS.join(', ')}`}</span>
           <span aria-hidden="true">
             to understand <span className="text-red-bright">{text}</span>
             {!reduced && <span className="ml-0.5 inline-block h-[1em] w-[0.5ch] translate-y-[0.15em] animate-pulse bg-red-bright" />}

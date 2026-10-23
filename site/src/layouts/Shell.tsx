@@ -25,7 +25,7 @@ function Nav() {
     >
       <Container className="flex h-16 items-center justify-between text-paper">
         <Link to="/" className="flex items-center gap-3" aria-label={`${LAB.name} home`}>
-          <img src="/brand/mark.png" alt="" className="h-8 w-8" />
+          <img src="/brand/mark.png" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="text-sm font-semibold tracking-tight">
             Output Layer Lab <span className="hidden font-normal text-paper/50 sm:inline">/ CMU</span>
           </span>
@@ -78,7 +78,7 @@ function Footer() {
     <footer className="bg-ink text-paper/60">
       <Container className="grid gap-12 py-16 md:grid-cols-[2fr_1fr_1fr]">
         <div>
-          <img src="/brand/wordmark.png" alt={LAB.name} className="h-12 w-auto invert" />
+          <img src="/brand/wordmark.png" alt={LAB.name} width={520} height={124} className="h-12 w-auto invert" />
           <p className="mt-6 max-w-sm text-sm">
             Department of Biomedical Engineering and Neuroscience Institute, {LAB.university}.
           </p>

@@ -303,7 +303,10 @@ export default function RecruitmentRaster({ className }: RecruitmentRasterProps)
 
   const setMode = (a: boolean) => {
     sim.auto = a
-    if (!a) sim.target = sim.f
+    if (!a) {
+      sim.target = sim.f
+      if (slider.current) slider.current.value = sim.f.toFixed(1)
+    }
     setAuto(a)
   }
   const local = (e: React.PointerEvent) => {

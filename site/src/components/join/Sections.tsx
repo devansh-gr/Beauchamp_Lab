@@ -37,7 +37,7 @@ export function Mentorship() {
     <section className="bg-paper py-24 md:py-40">
       <Container>
         <Reveal>
-          <Eyebrow>{MENTORSHIP.title}</Eyebrow>
+          <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-iron">{MENTORSHIP.title}</h2>
           <div className="mt-10 max-w-4xl border-l-4 border-red pl-6 sm:pl-10">
             <blockquote className="font-serif text-2xl leading-snug text-ink sm:text-3xl md:text-4xl">
               {MENTORSHIP.desc}
@@ -54,7 +54,7 @@ export function MastersTracks() {
     <section id="ms" className="scroll-mt-24 bg-paper-2 py-24 md:py-40">
       <Container>
         <Reveal>
-          <Eyebrow>{MASTERS.title}</Eyebrow>
+          <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-iron">{MASTERS.title}</h2>
           <p className="mt-6 max-w-3xl font-serif text-xl leading-relaxed text-ink-2">{MASTERS.intro}</p>
         </Reveal>
         <ul className="mt-16 grid gap-6 md:grid-cols-3">

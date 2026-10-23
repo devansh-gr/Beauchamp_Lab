@@ -65,7 +65,7 @@ export function PublicationFeed() {
         </div>
 
         <div className="mt-12">
-          <AnimatePresence mode="popLayout" initial={false}>
+          <AnimatePresence initial={false}>
             {groups.map(([year, items]) => (
               <motion.section
                 key={year}
@@ -78,7 +78,7 @@ export function PublicationFeed() {
               >
                 <h2 className="pt-8 font-mono text-2xl text-red md:sticky md:top-24 md:self-start">{year}</h2>
                 <ul>
-                  <AnimatePresence mode="popLayout" initial={false}>
+                  <AnimatePresence initial={false}>
                     {items.map((p) => (
                       <PublicationEntry key={p.title} pub={p} />
                     ))}

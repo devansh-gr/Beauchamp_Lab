@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beauchamplab.org/sitemap.xml
