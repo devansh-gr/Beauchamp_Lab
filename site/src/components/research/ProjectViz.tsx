@@ -15,7 +15,7 @@ function Pathway() {
             type="button"
             aria-pressed={step === i}
             onClick={() => setStep(i as 0 | 1 | 2 | 3)}
-            className={`border px-3 py-2 font-mono text-xs uppercase tracking-[0.14em] transition-colors ${
+            className={`border px-3 py-2 font-semibold text-xs uppercase tracking-[0.14em] transition-colors ${
               step === i ? 'border-red-bright bg-red text-paper' : 'border-paper/30 text-paper/70 hover:border-paper'
             }`}
           >

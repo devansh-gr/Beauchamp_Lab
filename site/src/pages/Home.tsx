@@ -26,7 +26,7 @@ export default function Home() {
             {FOCUS_AREAS.map((f, i) => (
               <li key={f.title}>
                 <Reveal delay={i * 0.1}>
-                  <p className="font-mono text-sm text-red">{`0${i + 1}`}</p>
+                  <p className="font-semibold text-sm text-red">{`0${i + 1}`}</p>
                   <h3 className="mt-4 text-2xl font-medium tracking-tight">{f.title}</h3>
                 </Reveal>
               </li>
@@ -41,7 +41,7 @@ export default function Home() {
         <Container>
           <Reveal>
             <Eyebrow>04 / Research</Eyebrow>
-            <h2 id="projects-h" className="mt-6 text-4xl font-medium tracking-tight sm:text-6xl">
+            <h2 id="projects-h" className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">
               Four lines of work
             </h2>
           </Reveal>
@@ -53,10 +53,10 @@ export default function Home() {
                     to={`/research#${p.slug}`}
                     className="group flex h-full flex-col p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-10"
                   >
-                    <span className="font-mono text-sm text-red">{p.num}</span>
+                    <span className="font-semibold text-sm text-red">{p.num}</span>
                     <h3 className="mt-6 text-2xl font-medium leading-tight tracking-tight">{p.title}</h3>
                     <p className="mt-4 font-serif text-lg text-iron">{p.short}</p>
-                    <span className="mt-8 font-mono text-sm text-red" aria-hidden="true">
+                    <span className="mt-8 font-semibold text-sm text-red" aria-hidden="true">
                       <span className="inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
                     </span>
                   </Link>
@@ -74,7 +74,7 @@ export default function Home() {
         <Container className="flex flex-wrap items-end justify-between gap-10">
           <Reveal>
             <Eyebrow className="text-white/70">07 / Join</Eyebrow>
-            <h2 id="join-h" className="mt-6 max-w-3xl text-4xl font-medium tracking-tight sm:text-6xl">
+            <h2 id="join-h" className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
               Build the window into the nervous system.
             </h2>
           </Reveal>

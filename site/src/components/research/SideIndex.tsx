@@ -12,7 +12,7 @@ export function SideIndex({ active }: { active: string }) {
             <a
               href={`#${p.slug}`}
               aria-current={active === p.slug ? 'true' : undefined}
-              className={`font-mono text-xs uppercase tracking-[0.18em] text-white transition-opacity ${
+              className={`font-semibold text-xs uppercase tracking-[0.18em] text-white transition-opacity ${
                 active === p.slug ? 'opacity-100' : 'opacity-40 hover:opacity-80'
               }`}
             >

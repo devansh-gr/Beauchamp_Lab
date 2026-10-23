@@ -1,4 +1,4 @@
-import '@fontsource-variable/inter'
+import '@fontsource-variable/open-sans/index.css'
 import '@fontsource-variable/source-serif-4'
 import '@fontsource-variable/jetbrains-mono'
 import './index.css'

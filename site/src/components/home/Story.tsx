@@ -36,7 +36,7 @@ export default function Story() {
       <Container className="pt-24 sm:pt-32">
         <Reveal>
           <Eyebrow className="text-red-bright">03 / From brain to muscle</Eyebrow>
-          <h2 id="story-h" className="mt-6 max-w-3xl text-4xl font-medium tracking-tight sm:text-6xl">
+          <h2 id="story-h" className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
             Every command ends at the motoneuron.
           </h2>
         </Reveal>
@@ -47,7 +47,7 @@ export default function Story() {
             <Suspense fallback={null}>
               <PathwayStory step={step} className="absolute inset-0 h-full w-full" />
             </Suspense>
-            <p className="absolute bottom-3 left-4 font-mono text-xs uppercase tracking-[0.18em] text-red-bright sm:left-8 lg:bottom-10 lg:left-0">
+            <p className="absolute bottom-3 left-4 font-semibold text-xs uppercase tracking-[0.18em] text-red-bright sm:left-8 lg:bottom-10 lg:left-0">
               {`0${step + 1}`} / {STEPS[step].label}
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function Story() {
                 step === i ? 'opacity-100' : 'opacity-35'
               }`}
             >
-              <p className="font-mono text-sm text-red-bright">{`0${i + 1}`}</p>
+              <p className="font-semibold text-sm text-red-bright">{`0${i + 1}`}</p>
               <p className="mt-2 text-sm uppercase tracking-[0.18em] text-paper/50">{s.label}</p>
               <p className="mt-4 font-serif text-xl leading-snug sm:text-3xl lg:mt-6">{s.text}</p>
             </li>

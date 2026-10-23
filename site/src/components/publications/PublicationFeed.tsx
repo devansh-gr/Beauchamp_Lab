@@ -44,7 +44,7 @@ export function PublicationFeed() {
                 type="button"
                 aria-pressed={filter === f}
                 onClick={() => setFilter(f)}
-                className={`cursor-pointer rounded-full border px-4 py-2 font-mono text-xs uppercase tracking-[0.14em] transition-colors ${
+                className={`cursor-pointer rounded-full border px-4 py-2 font-semibold text-xs uppercase tracking-[0.14em] transition-colors ${
                   filter === f ? 'border-ink bg-ink text-paper' : 'border-ink/25 text-ink hover:border-ink'
                 }`}
               >
@@ -59,7 +59,7 @@ export function PublicationFeed() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search title or authors"
-              className="w-full rounded-none border-b border-ink/30 bg-transparent py-2 font-mono text-sm text-ink placeholder:text-iron focus:border-red focus:outline-none"
+              className="w-full rounded-none border-b border-ink/30 bg-transparent py-2 font-semibold text-sm text-ink placeholder:text-iron focus:border-red focus:outline-none"
             />
           </label>
         </div>
@@ -76,7 +76,7 @@ export function PublicationFeed() {
                 aria-label={`${year} publications`}
                 className="md:grid md:grid-cols-[8rem_1fr] md:gap-8"
               >
-                <h2 className="pt-8 font-mono text-2xl text-red md:sticky md:top-24 md:self-start">{year}</h2>
+                <h2 className="pt-8 font-semibold text-2xl text-red md:sticky md:top-24 md:self-start">{year}</h2>
                 <ul>
                   <AnimatePresence initial={false}>
                     {items.map((p) => (
@@ -88,7 +88,7 @@ export function PublicationFeed() {
             ))}
           </AnimatePresence>
           {groups.length === 0 && (
-            <p className="border-t border-ink/15 pt-8 font-mono text-sm text-iron" role="status">
+            <p className="border-t border-ink/15 pt-8 font-semibold text-sm text-iron" role="status">
               No matching publications.
             </p>
           )}
@@ -96,7 +96,7 @@ export function PublicationFeed() {
 
         {scholar && (
           <div className="mt-16 border-t border-ink/15 pt-8">
-            <a href={scholar.href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-[0.14em] text-red hover:underline">
+            <a href={scholar.href} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 font-semibold text-sm uppercase tracking-[0.14em] text-red hover:underline">
               Full list on Google Scholar
               <span aria-hidden className="transition-transform group-hover:translate-x-1">
                 →

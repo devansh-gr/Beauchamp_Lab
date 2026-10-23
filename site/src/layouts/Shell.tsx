@@ -27,7 +27,7 @@ function Nav() {
         <Link to="/" className="flex items-center gap-3" aria-label={`${LAB.name} home`}>
           <img src="/brand/mark.png" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="text-sm font-semibold tracking-tight">
-            Output Layer Lab <span className="hidden font-normal text-paper/50 sm:inline">/ CMU</span>
+            Output Layer Lab
           </span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
@@ -50,7 +50,7 @@ function Nav() {
           </Link>
         </nav>
         <button
-          className="font-mono text-xs uppercase tracking-widest md:hidden"
+          className="font-semibold text-xs uppercase tracking-widest md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((o) => !o)}
@@ -82,6 +82,10 @@ function Footer() {
           <p className="mt-6 max-w-sm text-sm">
             Department of Biomedical Engineering and Neuroscience Institute, {LAB.university}.
           </p>
+          {/* Official CMU wordmark: unmodified artwork, white on dark, 300px minimum width, 1 M-width clear space. */}
+          <a href="https://www.cmu.edu" className="mt-10 inline-block p-4 -m-4" aria-label="Carnegie Mellon University">
+            <img src="/brand/cmu-wordmark-white.svg" alt="Carnegie Mellon University" width={300} height={27} className="w-[300px] max-w-full" />
+          </a>
         </div>
         <div className="flex flex-col gap-2 text-sm">
           {NAV.map((n) => (
@@ -99,7 +103,7 @@ function Footer() {
           </Link>
         </div>
       </Container>
-      <Container className="flex flex-col justify-between gap-2 border-t border-paper/10 py-6 font-mono text-xs sm:flex-row">
+      <Container className="flex flex-col justify-between gap-2 border-t border-paper/10 py-6 font-semibold text-xs sm:flex-row">
         <span>© {new Date().getFullYear()} {LAB.name} · {LAB.university}</span>
         <span>{LAB.tagline}</span>
       </Container>
@@ -126,7 +130,7 @@ export default function Shell() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.15 }}
         >
           <Suspense fallback={<div className="min-h-screen bg-ink" />}>
             <Outlet />

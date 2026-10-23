@@ -9,7 +9,7 @@ export default function Join() {
         <Container>
           <Reveal>
             <Eyebrow className="text-red-bright">Join</Eyebrow>
-            <h1 className="mt-6 max-w-5xl text-display font-medium">Build the window into the nervous system.</h1>
+            <h1 className="mt-6 max-w-5xl text-display font-bold">Build the window into the nervous system.</h1>
             <p className="mt-8 max-w-2xl font-serif text-xl leading-relaxed text-paper/70">
               {LAB.joinIntro}
             </p>

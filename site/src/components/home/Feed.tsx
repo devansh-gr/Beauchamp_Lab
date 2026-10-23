@@ -10,11 +10,11 @@ export default function Feed() {
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <Eyebrow>06 / Latest publications</Eyebrow>
-            <h2 id="pubs-h" className="mt-6 text-4xl font-medium tracking-tight sm:text-6xl">
+            <h2 id="pubs-h" className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">
               In print
             </h2>
           </div>
-          <Link to="/publications" className="group font-mono text-sm uppercase tracking-[0.14em] text-red">
+          <Link to="/publications" className="group font-semibold text-sm uppercase tracking-[0.14em] text-red">
             All publications <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
           </Link>
         </Reveal>
@@ -23,7 +23,7 @@ export default function Feed() {
             <li key={p.title}>
               <Reveal delay={i * 0.08}>
                 <article className="grid gap-4 py-8 md:grid-cols-[14rem_1fr_auto] md:gap-10">
-                  <div className="font-mono text-xs uppercase tracking-[0.14em] text-iron">
+                  <div className="font-semibold text-xs uppercase tracking-[0.14em] text-iron">
                     <p>{p.year}</p>
                     <p className="mt-1">{p.venue}</p>
                     <span className="mt-3 inline-block rounded-full border border-red px-2.5 py-0.5 text-red">{p.type}</span>
@@ -38,7 +38,7 @@ export default function Feed() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`DOI link for ${p.title}`}
-                      className="group font-mono text-sm uppercase tracking-[0.14em] text-red md:self-start"
+                      className="group font-semibold text-sm uppercase tracking-[0.14em] text-red md:self-start"
                     >
                       DOI <span className="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
                     </a>

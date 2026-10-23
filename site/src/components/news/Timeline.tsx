@@ -21,7 +21,7 @@ export function Timeline({ items }: { items: NewsItem[] }) {
   const shown = filter === 'all' ? sorted : sorted.filter((i) => i.type === filter)
 
   const chip = (active: boolean) =>
-    `rounded-full border px-4 py-1.5 font-mono text-xs uppercase tracking-[0.14em] transition-colors ${
+    `rounded-full border px-4 py-1.5 font-semibold text-xs uppercase tracking-[0.14em] transition-colors ${
       active ? 'border-red bg-red text-paper' : 'border-steel text-iron hover:border-ink-2 hover:text-ink-2'
     }`
 
@@ -43,7 +43,7 @@ export function Timeline({ items }: { items: NewsItem[] }) {
         <ol className="relative">
           {shown.map((item, idx) => (
             <li key={`${filter}-${item.date}-${item.title}`} className="relative grid grid-cols-[1.5rem_1fr] gap-x-4 sm:grid-cols-[8rem_1.5rem_1fr] sm:gap-x-6">
-              <span className="col-span-2 col-start-1 row-start-1 mb-2 font-mono text-xs uppercase tracking-[0.18em] text-iron sm:col-span-1 sm:mb-0 sm:pt-6 sm:text-right">
+              <span className="col-span-2 col-start-1 row-start-1 mb-2 font-semibold text-xs uppercase tracking-[0.18em] text-iron sm:col-span-1 sm:mb-0 sm:pt-6 sm:text-right">
                 <time dateTime={item.date}>{railDate(item.date)}</time>
               </span>
               <div className="relative row-start-2 sm:row-start-1" aria-hidden="true">
@@ -53,7 +53,7 @@ export function Timeline({ items }: { items: NewsItem[] }) {
               <Reveal className="row-start-2 pb-8 sm:row-start-1">
                 <article className="rounded-sm border border-steel bg-paper-2 p-5 sm:p-6">
                   <div className="flex items-start justify-between gap-4">
-                    <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-red">{LABEL[item.type] ?? item.type}</span>
+                    <span className="font-semibold text-[0.7rem] uppercase tracking-[0.18em] text-red">{LABEL[item.type] ?? item.type}</span>
                     {item.href && (
                       <a
                         href={item.href}

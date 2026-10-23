@@ -13,14 +13,14 @@ export function RelatedPubs({ slug, dark }: { slug: string; dark: boolean }) {
   if (!pubs.length) return null
   return (
     <aside className="mt-16" aria-label="Related publications">
-      <p className={`font-mono text-xs uppercase tracking-[0.18em] ${dark ? 'text-red-bright' : 'text-red'}`}>
+      <p className={`font-semibold text-xs uppercase tracking-[0.18em] ${dark ? 'text-red-bright' : 'text-red'}`}>
         Related publications
       </p>
       <ul className={`mt-4 divide-y border-y ${dark ? 'divide-paper/15 border-paper/15' : 'divide-ink/15 border-ink/15'}`}>
         {pubs.map((p) => {
           const inner = (
             <>
-              <span className="font-mono text-xs text-iron">
+              <span className="font-semibold text-xs text-iron">
                 {p.year} / {p.venue}
               </span>
               <span className="mt-1 block font-sans text-lg font-medium tracking-tight">{p.title}</span>

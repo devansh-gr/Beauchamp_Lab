@@ -43,19 +43,19 @@ export function ContactForm() {
   return (
     <form onSubmit={onSubmit} className="space-y-8">
       <div>
-        <label htmlFor="contact-name" className="font-mono text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-name" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
           Name
         </label>
         <input id="contact-name" name="name" type="text" required autoComplete="name" className={field} />
       </div>
       <div>
-        <label htmlFor="contact-email" className="font-mono text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-email" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
           Email
         </label>
         <input id="contact-email" name="email" type="email" required autoComplete="email" className={field} />
       </div>
       <div>
-        <label htmlFor="contact-message" className="font-mono text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-message" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
           Message
         </label>
         <textarea id="contact-message" name="message" required rows={5} className={`${field} resize-y`} />
@@ -63,7 +63,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={sending}
-        className="bg-red px-8 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-red-bright disabled:cursor-not-allowed disabled:opacity-50"
+        className="bg-red px-8 py-4 font-semibold text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-red-bright disabled:cursor-not-allowed disabled:opacity-50"
       >
         {sending ? 'Sending' : 'Send message'}
       </button>

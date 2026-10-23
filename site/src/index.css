@@ -12,13 +12,13 @@
   --color-steel: #e0e0e0;
   --color-signal: #c41230;
 
-  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Open Sans Variable', Helvetica, ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
 
   --text-display: clamp(2.75rem, 7vw, 6.5rem);
-  --text-display--line-height: 0.95;
-  --text-display--letter-spacing: -0.045em;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.025em;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }

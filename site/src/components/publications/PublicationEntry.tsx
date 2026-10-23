@@ -57,7 +57,7 @@ export function PublicationEntry({ pub }: { pub: Publication }) {
       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
       className="border-t border-ink/15 py-8"
     >
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-xs uppercase tracking-[0.14em] text-iron">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-semibold text-xs uppercase tracking-[0.14em] text-iron">
         <span>{pub.venue}</span>
         <span className="rounded-full border border-ink/25 px-2.5 py-0.5 text-[11px]">{TYPE_LABEL[pub.type]}</span>
         {pub.firstAuthor && <span className="rounded-full bg-red px-2.5 py-0.5 text-[11px] text-white">First author</span>}
@@ -74,7 +74,7 @@ export function PublicationEntry({ pub }: { pub: Publication }) {
       <p className="mt-3 max-w-3xl font-serif text-base leading-relaxed text-ink-3/80">
         <Authors text={pub.authors} />
       </p>
-      <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.14em]">
+      <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 font-semibold text-xs uppercase tracking-[0.14em]">
         {url && (
           <a href={url} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-1.5 text-red hover:underline">
             DOI

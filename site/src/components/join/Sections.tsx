@@ -18,7 +18,7 @@ export function RolesRow() {
           <a
             key={r.label}
             href={r.href}
-            className="group flex items-center justify-between border-steel py-6 font-mono text-sm uppercase tracking-[0.18em] text-ink-2 transition-colors hover:text-red max-sm:border-b sm:px-6 sm:[&:not(:first-child)]:border-l"
+            className="group flex items-center justify-between border-steel py-6 font-semibold text-sm uppercase tracking-[0.18em] text-ink-2 transition-colors hover:text-red max-sm:border-b sm:px-6 sm:[&:not(:first-child)]:border-l"
           >
             <span>
               <span className="mr-3 text-iron">0{i + 1}</span>
@@ -37,7 +37,7 @@ export function Mentorship() {
     <section className="bg-paper py-24 md:py-40">
       <Container>
         <Reveal>
-          <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-iron">{MENTORSHIP.title}</h2>
+          <h2 className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">{MENTORSHIP.title}</h2>
           <div className="mt-10 max-w-4xl border-l-4 border-red pl-6 sm:pl-10">
             <blockquote className="font-serif text-2xl leading-snug text-ink sm:text-3xl md:text-4xl">
               {MENTORSHIP.desc}
@@ -54,7 +54,7 @@ export function MastersTracks() {
     <section id="ms" className="scroll-mt-24 bg-paper-2 py-24 md:py-40">
       <Container>
         <Reveal>
-          <h2 className="font-mono text-xs uppercase tracking-[0.18em] text-iron">{MASTERS.title}</h2>
+          <h2 className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">{MASTERS.title}</h2>
           <p className="mt-6 max-w-3xl font-serif text-xl leading-relaxed text-ink-2">{MASTERS.intro}</p>
         </Reveal>
         <ul className="mt-16 grid gap-6 md:grid-cols-3">
@@ -66,7 +66,7 @@ export function MastersTracks() {
                   transition={{ duration: 0.3 }}
                   className="flex h-full flex-col border border-steel bg-paper p-8 transition-shadow hover:shadow-xl"
                 >
-                  <span className="font-mono text-4xl text-red">{a.num}</span>
+                  <span className="font-semibold text-4xl text-red">{a.num}</span>
                   <h3 className="mt-6 text-2xl font-medium tracking-tight text-ink">{a.title}</h3>
                   <p className="mt-4 font-serif leading-relaxed text-ink-2">{a.body}</p>
                 </motion.article>
@@ -98,7 +98,7 @@ export function PhdPrograms() {
                   className="group flex h-full min-h-40 flex-col justify-between border border-steel bg-paper-2 p-8 transition duration-300 hover:-translate-y-1 hover:border-red"
                 >
                   <span className="text-xl font-medium tracking-tight text-ink">{p.label}</span>
-                  <span className="mt-8 font-mono text-xs uppercase tracking-[0.18em] text-red">
+                  <span className="mt-8 font-semibold text-xs uppercase tracking-[0.18em] text-red">
                     Program page <span aria-hidden className={arrow}>↗</span>
                     <span className="sr-only"> (opens in new tab)</span>
                   </span>
@@ -120,11 +120,11 @@ export function Postdoc() {
         <Reveal>
           <div className="bg-ink p-8 text-paper sm:p-14">
             <Eyebrow className="text-red-bright">Postdoc</Eyebrow>
-            <h2 className="mt-6 max-w-3xl text-4xl font-medium tracking-tight sm:text-5xl">{p.title}</h2>
+            <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">{p.title}</h2>
             <p className="mt-6 max-w-2xl font-serif text-xl leading-relaxed text-paper/70">{p.desc}</p>
             <a
               href={`mailto:${LAB.email}`}
-              className="group mt-10 inline-block font-mono text-sm uppercase tracking-[0.18em] text-red-bright"
+              className="group mt-10 inline-block font-semibold text-sm uppercase tracking-[0.18em] text-red-bright"
             >
               {LAB.email} <span aria-hidden className={arrow}>→</span>
             </a>
@@ -140,18 +140,18 @@ export function CtaBand() {
     <section className="bg-red py-20 text-white md:py-28">
       <Container className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <Reveal>
-          <h2 className="max-w-xl text-4xl font-medium tracking-tight sm:text-5xl">Get in touch.</h2>
+          <h2 className="max-w-xl text-4xl font-semibold tracking-tight sm:text-5xl">Get in touch.</h2>
         </Reveal>
         <Reveal delay={0.1} className="flex flex-col gap-4 sm:flex-row">
           <Link
             to="/contact"
-            className="group bg-ink px-8 py-4 text-center font-mono text-sm uppercase tracking-[0.18em] text-paper transition-transform hover:-translate-y-0.5"
+            className="group bg-ink px-8 py-4 text-center font-semibold text-sm uppercase tracking-[0.18em] text-paper transition-transform hover:-translate-y-0.5"
           >
             Contact form <span aria-hidden className={arrow}>→</span>
           </Link>
           <a
             href={`mailto:${LAB.email}`}
-            className="border border-white px-8 py-4 text-center font-mono text-sm tracking-[0.04em] transition-colors hover:bg-white hover:text-red"
+            className="border border-white px-8 py-4 text-center font-semibold text-sm tracking-[0.04em] transition-colors hover:bg-white hover:text-red"
           >
             {LAB.email}
           </a>

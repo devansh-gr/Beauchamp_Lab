@@ -9,7 +9,7 @@ export default function PeopleGrid({ eyebrow, title, people, tone }: { eyebrow: 
       <Container>
         <Reveal>
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 id={headingId} className="mt-4 text-3xl font-medium tracking-tight sm:text-4xl">{title}</h2>
+          <h2 id={headingId} className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
         </Reveal>
         <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4">
           {people.map((p, i) => (

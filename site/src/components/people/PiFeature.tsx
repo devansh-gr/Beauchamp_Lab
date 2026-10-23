@@ -13,9 +13,9 @@ export default function PiFeature() {
         <div className="lg:col-span-7">
           <Reveal delay={0.1}>
             <Eyebrow>{PI.role}</Eyebrow>
-            <h2 id="pi-name" className="mt-4 text-4xl font-medium tracking-tight sm:text-5xl">{PI.name}</h2>
-            <p className="mt-4 font-mono text-sm uppercase tracking-[0.12em] text-red">{PI.title}</p>
-            <p className="mt-1 font-mono text-sm uppercase tracking-[0.12em] text-iron">{PI.dept}</p>
+            <h2 id="pi-name" className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{PI.name}</h2>
+            <p className="mt-4 font-semibold text-sm uppercase tracking-[0.12em] text-red">{PI.title}</p>
+            <p className="mt-1 font-semibold text-sm uppercase tracking-[0.12em] text-iron">{PI.dept}</p>
             {PI.likes && <p className="mt-6 font-serif text-lg italic text-iron">{PI.likes}</p>}
           </Reveal>
           <Reveal delay={0.2}>
@@ -38,7 +38,7 @@ export default function PiFeature() {
                       <a
                         href={l.href}
                         {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="inline-block rounded-full border border-ink/25 px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] transition hover:border-red hover:bg-red hover:text-paper"
+                        className="inline-block rounded-full border border-ink/25 px-4 py-2 font-semibold text-xs uppercase tracking-[0.12em] transition hover:border-red hover:bg-red hover:text-paper"
                       >
                         {l.label}
                         {external && <span aria-hidden="true"> &rarr;</span>}
