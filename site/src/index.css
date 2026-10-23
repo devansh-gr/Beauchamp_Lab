@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #0b0b0c;
+  --color-ink-2: #141414;
+  --color-ink-3: #1f1f21;
+  --color-paper: #f6f4ef;
+  --color-paper-2: #ece9e1;
+  --color-red: #c41230;
+  --color-red-bright: #ef3a47;
+  --color-iron: #6d6e71;
+  --color-steel: #e0e0e0;
+  --color-signal: #c41230;
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --text-display: clamp(2.75rem, 7vw, 6.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.045em;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink-2);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: var(--color-red);
+    color: white;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-red-bright);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

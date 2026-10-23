@@ -18,7 +18,7 @@ interesting site that shows the science, not just describes it.
 - `research/` source material: raw site dump, audit, benchmark, science, stack notes.
 - `docs/ARCHITECTURE.md` agent architecture, phases, file ownership. Read before delegating.
 - `.claude/agents/` project workers: content-steward, page-builder, viz-builder, site-auditor.
-- `site/` the new site (created in Phase 1).
+- `site/` the demo: Vite + React 19 + TS + Tailwind 4 + motion. `docs/DESIGN.md` is the design brief.
 
 ## Working mode
 Main thread is the lead: owns design tokens, layout shell, integration, merges, commits.
