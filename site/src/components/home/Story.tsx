@@ -60,13 +60,13 @@ export default function Story() {
               ref={(el) => {
                 refs.current[i] = el
               }}
-              className={`flex min-h-[60vh] flex-col justify-center transition-opacity duration-500 lg:min-h-svh ${
+              className={`flex min-h-[70vh] flex-col justify-end pb-[8vh] transition-opacity duration-500 lg:min-h-svh lg:justify-center lg:pb-0 ${
                 step === i ? 'opacity-100' : 'opacity-35'
               }`}
             >
               <p className="font-mono text-sm text-red-bright">{`0${i + 1}`}</p>
               <p className="mt-2 text-sm uppercase tracking-[0.18em] text-paper/50">{s.label}</p>
-              <p className="mt-6 font-serif text-2xl leading-snug sm:text-3xl">{s.text}</p>
+              <p className="mt-4 font-serif text-xl leading-snug sm:text-3xl lg:mt-6">{s.text}</p>
             </li>
           ))}
         </ol>

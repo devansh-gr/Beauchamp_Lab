@@ -8,7 +8,7 @@ tools: Read, Grep, Glob, Bash
 You audit the built site. You do not edit files.
 
 Procedure:
-1. `cd site && npm run build 2>&1 | tail -10`, then `npx astro preview --port 4329 &`.
+1. `cd site && npm run build 2>&1 | tail -10`, then `npx vite preview --port 4329 --strictPort &`.
 2. Lighthouse per page: `npx lighthouse http://localhost:4329/<path> --quiet --chrome-flags=--headless --only-categories=performance,accessibility,seo,best-practices --output=json --output-path=/tmp/lh-<page>.json`, then print only the 4 scores.
 3. axe: `npx @axe-core/cli http://localhost:4329/<path> 2>&1 | tail -30`.
 4. Links: `npx linkinator http://localhost:4329 --recurse 2>&1 | grep -E 'BROKEN|\[4|\[5' | head`.
