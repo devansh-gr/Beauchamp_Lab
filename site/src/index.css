@@ -58,3 +58,6 @@
 .bg-ink .text-iron {
   color: #9a9b9e;
 }
+.bg-ink .bg-paper .text-iron {
+  color: var(--color-iron);
+}
