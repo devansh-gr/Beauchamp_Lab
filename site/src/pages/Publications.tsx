@@ -1,6 +1,11 @@
 import { PageHeader } from '../components/ui/Reveal'
+import { PublicationFeed } from '../components/publications/PublicationFeed'
 
-// STUB: replaced by page-builder.
 export default function Publications() {
-  return <PageHeader eyebrow="Publications" title="Publications" />
+  return (
+    <>
+      <PageHeader eyebrow="Publications" title="Publications" />
+      <PublicationFeed />
+    </>
+  )
 }
