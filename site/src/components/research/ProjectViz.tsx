@@ -29,7 +29,7 @@ function Pathway() {
 }
 
 export function ProjectViz({ viz }: { viz: Project['viz'] }) {
-  if (!viz || viz === 'EmgHero') return null
+  if (!viz) return null
   const cls = 'h-[460px] w-full'
   return (
     <Suspense fallback={<div className={`${cls} animate-pulse bg-current opacity-5`} aria-hidden />}>

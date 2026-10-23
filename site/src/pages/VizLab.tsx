@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Container, PageHeader } from '../components/ui/Reveal'
-import { EmgHero, NeuromodDial, PathwayStory, RecruitmentRaster } from '../components/viz'
+import { NeuromodDial, PathwayStory, RecruitmentRaster } from '../components/viz'
 
 // Isolated preview of every visualization. Not linked from the nav.
 export default function VizLab() {
@@ -9,7 +9,6 @@ export default function VizLab() {
     <>
       <PageHeader eyebrow="Internal" title="Viz lab" />
       <Suspense fallback={null}>
-        <div className="h-[80vh] bg-ink"><EmgHero className="h-full w-full" /></div>
         <Container className="grid gap-16 py-16">
           <RecruitmentRaster className="h-[480px] w-full" />
           <NeuromodDial className="h-[480px] w-full" />

@@ -41,7 +41,7 @@ export function ProjectSection({ project, dark }: { project: Project; dark: bool
           </div>
         )}
 
-        {viz && viz !== 'EmgHero' && (
+        {viz && (
           <div className="mt-16">
             <ProjectViz viz={viz} />
           </div>

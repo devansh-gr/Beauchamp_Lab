@@ -71,6 +71,13 @@ export default function Story() {
           ))}
         </ol>
       </Container>
+      <Container className="pb-12">
+        <p className="max-w-3xl text-xs leading-relaxed text-paper/50">
+          Anatomy from BodyParts3D, The Database Center for Life Science (CC BY-SA 2.1 JP). Motoneuron: cat spinal alpha
+          motoneuron v_e_moto4, Cullheim et al. 1987, via NeuroMorpho.Org (CC BY 4.0), shown magnified. Spinal cord path,
+          motor axon and electrode grid are schematic.
+        </p>
+      </Container>
     </section>
   )
 }

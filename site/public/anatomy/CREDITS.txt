@@ -1,0 +1,16 @@
+pathway.glb is built by scripts/build-anatomy.mjs from:
+
+Brain, brainstem, vertebrae, right humerus, right biceps brachii:
+  BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan.
+  https://dbarchive.biosciencedbc.jp/en/bodyparts3d/
+  (DBCLS now lists the current release under CC BY 4.0; the 2011 OBJ files used here carry the BY-SA 2.1 JP notice.)
+  pathway.glb, as a derivative, is shared under the same license.
+
+Spinal motoneuron:
+  NeuroMorpho.Org neuron v_e_moto4 (cat, spinal cord, alpha motoneuron, Burke archive). CC BY 4.0.
+  Cullheim S, Fleshman JW, Glenn LL, Burke RE (1987). Membrane area and dendritic structure in
+  type-identified triceps surae alpha motoneurons. J Comp Neurol 255:68-81.
+  Ascoli GA, Donohue DE, Halavi M (2007). NeuroMorpho.Org: a central resource for neuronal morphologies. J Neurosci 27:9247-9251.
+
+Generated, schematic: spinal cord tube (fitted through the vertebral canal), motor axon path, 8 x 8 electrode grid.
+The motoneuron is shown magnified, not to scale.
