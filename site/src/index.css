@@ -33,6 +33,13 @@
   body {
     font-family: var(--font-sans);
   }
+  /* Set by the home story while it is on screen: on touch screens one swipe moves one step.
+     Mouse and trackpad stepping is handled in Story.tsx. */
+  @media (pointer: coarse) {
+    html.story-snap {
+      scroll-snap-type: y mandatory;
+    }
+  }
   ::selection {
     background: var(--color-red);
     color: white;
