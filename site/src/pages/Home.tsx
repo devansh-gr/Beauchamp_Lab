@@ -16,8 +16,11 @@ export default function Home() {
           <Reveal>
             <Eyebrow>01 / Overview</Eyebrow>
             <h2 id="overview-h" className="mt-8 max-w-5xl font-serif text-3xl leading-snug sm:text-5xl sm:leading-tight">
-              {LAB.overview}
+              {LAB.overview.slice(0, LAB.overview.indexOf('. ') + 1)}
             </h2>
+            <p className="mt-8 max-w-3xl font-serif text-xl leading-relaxed text-ink-2/60 sm:text-2xl">
+              {LAB.overview.slice(LAB.overview.indexOf('. ') + 2)}
+            </p>
           </Reveal>
           <ol className="mt-20 grid gap-12 border-t border-ink/15 pt-12 md:grid-cols-3">
             {FOCUS_AREAS.map((f, i) => (
