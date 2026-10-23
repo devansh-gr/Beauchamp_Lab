@@ -14,7 +14,7 @@ function Nav() {
       <Container className="flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-3" aria-label={`${LAB.name} home`}>
           <img src={asset('/brand/mark.png')} alt="" width={32} height={32} className="h-8 w-8" />
-          <span className="text-base font-bold tracking-tight text-ink-2">{LAB.name}</span>
+          <span className="font-display text-[1.4rem] font-semibold leading-none text-red">{LAB.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
           {NAV.map((n) => (

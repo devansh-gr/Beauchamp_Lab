@@ -17,6 +17,8 @@
 
   --font-sans: 'Open Sans Variable', Helvetica, ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+  /* Lab name only: a classical serif set apart from the Source Serif headings. */
+  --font-display: 'EB Garamond Variable', 'Source Serif 4 Variable', Georgia, serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
 }
 
