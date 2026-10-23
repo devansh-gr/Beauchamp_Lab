@@ -1,0 +1,84 @@
+Beauchamp Lab — The Output Layer Lab | CMU Neurotechnology & Neuromotor Systems
+Output Layer Lab
+Carnegie Mellon University
+{{ item.label }}
+Get Connected
+We study how the nervous system generates and controls movement, using spinal motoneurons (
+the output layer
+of the neuromotor system) to estimate upstream signaling from spinal, cortical, and subcortical sources. We translate that understanding into technologies for rehabilitation, assistive devices, and human-machine interfaces.
+View Research
+Meet the Team
+Carnegie Mellon University
+{{ area.title }}
+{{ area.desc }}
+People
+Our Team
+James (Drew) Beauchamp, PhD
+Assistant Professor, Biomedical Engineering & Neuroscience Institute
+Carnegie Mellon University
+Likes coffee, cycling, and starting new projects.
+in
+LinkedIn
+G
+Google Scholar
+iD
+ORCID
+NI
+Neuroscience Institute
+BME
+CMU BME
+@
+Email
+Lab Members
+{{ person.name }}
+{{ person.role }}
+{{ person.likes }}
+Collaborators
+{{ collab.name }}
+{{ collab.affiliation }}
+{{ collab.likes }}
+Research
+Research
+Lab Overview
+{{ labOverview }}
+{{ proj.num }}
+{{ proj.title }}
+{{ proj.body }}
+{{ sub.num }}
+{{ sub.title }}
+{{ sub.body }}
+Join Us
+Open Positions
+The Output Layer Lab is always looking to connect with curious, motivated researchers across levels of experience.
+{{ mentorship.title }}
+{{ mentorship.desc }}
+{{ masters.title }}
+{{ masters.intro }}
+{{ area.num }}
+{{ area.title }}
+{{ area.body }}
+{{ phd.title }}
+{{ phd.desc }}
+{{ prog.name }}
+{{ pos.title }}
+{{ pos.desc }}
+Updates
+Lab Updates
+Social
+Coming soon...
+Professional
+Coming soon...
+Contact
+Get Connected
+Reach out about anything.
+Or email directly at
+jabeauchamp@cmu.edu
+.
+Thanks — your message has been noted. We'll follow up soon.
+Name
+Email
+Message
+{{ sendLabel }}
+Something went wrong sending your message. Please try again or email us directly.
+© 2026 The Output Layer Lab · Carnegie Mellon University
+Neuromotor systems and technology

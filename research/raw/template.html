@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="6c42a6b7-8123-4552-bca0-21f5e8773d82"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  
+  
+  
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
+  <style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4bf3f0a0-6c14-47d0-91a8-3debb11b812b") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("aa5038f0-5c83-4889-a256-01f19eb6ecfa") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("5cfe4f10-274e-4b0f-a110-413dd35c1491") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("ffb0ec66-55ed-49c9-b43c-debd97e62db9") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("332448c4-b336-47e1-9a6d-ee007b4b4a70") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6d2757bb-6ba0-43b8-b820-041800f8fc45") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e823824b-72b2-445c-9506-61daaceab35d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4bf3f0a0-6c14-47d0-91a8-3debb11b812b") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("aa5038f0-5c83-4889-a256-01f19eb6ecfa") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("5cfe4f10-274e-4b0f-a110-413dd35c1491") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("ffb0ec66-55ed-49c9-b43c-debd97e62db9") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("332448c4-b336-47e1-9a6d-ee007b4b4a70") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("6d2757bb-6ba0-43b8-b820-041800f8fc45") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("e823824b-72b2-445c-9506-61daaceab35d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("4bf3f0a0-6c14-47d0-91a8-3debb11b812b") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("aa5038f0-5c83-4889-a256-01f19eb6ecfa") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("5cfe4f10-274e-4b0f-a110-413dd35c1491") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("ffb0ec66-55ed-49c9-b43c-debd97e62db9") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("332448c4-b336-47e1-9a6d-ee007b4b4a70") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("6d2757bb-6ba0-43b8-b820-041800f8fc45") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("e823824b-72b2-445c-9506-61daaceab35d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("4bf3f0a0-6c14-47d0-91a8-3debb11b812b") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("aa5038f0-5c83-4889-a256-01f19eb6ecfa") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("5cfe4f10-274e-4b0f-a110-413dd35c1491") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("ffb0ec66-55ed-49c9-b43c-debd97e62db9") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("332448c4-b336-47e1-9a6d-ee007b4b4a70") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("6d2757bb-6ba0-43b8-b820-041800f8fc45") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e823824b-72b2-445c-9506-61daaceab35d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("4bf3f0a0-6c14-47d0-91a8-3debb11b812b") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("aa5038f0-5c83-4889-a256-01f19eb6ecfa") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("5cfe4f10-274e-4b0f-a110-413dd35c1491") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("ffb0ec66-55ed-49c9-b43c-debd97e62db9") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("332448c4-b336-47e1-9a6d-ee007b4b4a70") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("6d2757bb-6ba0-43b8-b820-041800f8fc45") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("e823824b-72b2-445c-9506-61daaceab35d") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <title>Beauchamp Lab — The Output Layer Lab | CMU Neurotechnology &amp; Neuromotor Systems</title>
+  <meta name="description" content="The Beauchamp Lab (Output Layer Lab) at Carnegie Mellon University develops neurotechnology using spinal motoneurons to study neuromotor systems, stroke and TBI recovery, and human-machine interfaces.">
+  <script data-goatcounter="https://jabeauchamp.goatcounter.com/count" async="true" src="2b312c54-18de-4820-b06d-61e68748a118"></script>
+  <style>
+    body { margin: 0; background: #FFFFFF; }
+    * { box-sizing: border-box; }
+    a { color: #C41230; text-decoration: none; }
+    a:hover { color: #8f0d24; text-decoration: underline; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Inter', Helvetica, Arial, sans-serif; color: #141414; min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- NAV -->
+  <div style="position: sticky; top: 0; z-index: 20; background: #FFFFFF; border-bottom: 1px solid #E4E4E4; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 14px clamp(16px, 4vw, 48px);">
+    <div style="display: flex; align-items: center; gap: 14px; cursor: pointer;" sc-camel-on-click="{{ goHome }}">
+      <img src="56d6c4d0-f0e1-4d1d-b624-791bd7a03ea7" alt="Output Layer Lab mark" style="width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;">
+      <div style="display: flex; flex-direction: column; line-height: 1.15;">
+        <div style="font-weight: 800; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase;">Output Layer Lab</div>
+        <div style="font-size: 11px; color: #63666A; letter-spacing: 0.03em;">Carnegie Mellon University</div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(12px, 3vw, 36px); row-gap: 10px;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="4">
+        <div style="{{ item.style }}" sc-camel-on-click="{{ item.onClick }}">{{ item.label }}</div>
+      </sc-for>
+      <div style="width: 1px; height: 22px; background: #E4E4E4;"></div>
+      <button style="background: #C41230; color: #FFFFFF; border: none; padding: 10px 20px; font-size: 13px; font-weight: 600; letter-spacing: 0.02em; cursor: pointer; border-radius: 2px;" style-hover="background: #a10f28;" sc-camel-on-click="{{ goContact }}">Get Connected</button>
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div data-screen-label="Home" style="flex: 1;">
+      <div style="max-width: 900px; margin: 0 auto; padding: clamp(50px, 10vw, 90px) clamp(20px, 5vw, 48px) 20px; text-align: center;">
+        
+        <img src="5af09098-8f48-414d-b3cb-8fa37cdd5070" alt="The Output Layer Lab — Neuromotor Systems &amp; Technology" style="width: 100%; max-width: 850px; height: auto; margin: 0 0 36px; margin-bottom: 0px">
+        <div style="font-size: 17px; line-height: 1.45; color: #3A3A3A; max-width: 750px; width: 100%; margin: 0 auto 40px"><p data-pm-slice="1 1 []" style="width: 100%; max-width: 100%;">We study how the nervous system generates and controls movement, using spinal motoneurons (<b><i style="color: #CC2636">the output layer</i></b> of the neuromotor system) to estimate upstream signaling from spinal, cortical, and subcortical sources. We translate that understanding into technologies for rehabilitation, assistive devices, and human-machine interfaces.</p></div>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+          <button style="background: #141414; color: #FFFFFF; border: none; padding: 13px 26px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 2px;" style-hover="background: #333;" sc-camel-on-click="{{ goProjects }}">View Research</button>
+          <button style="background: #FFFFFF; color: #141414; border: 1px solid #D6D6D6; padding: 13px 26px; font-size: 14px; font-weight: 600; cursor: pointer; border-radius: 2px;" style-hover="border-color: #141414;" sc-camel-on-click="{{ goPeople }}">Meet the Team</button>
+        </div><div style="font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C41230; margin-bottom: 0px; margin-top: 10px">Carnegie Mellon University</div>
+      </div>
+
+      <div style="background: #F6F6F6; padding: clamp(36px, 8vw, 64px) clamp(20px, 5vw, 48px); border-top: 1px solid #E4E4E4;">
+        <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px;">
+          <sc-for list="{{ focusAreas }}" as="area" hint-placeholder-count="3">
+            <div style="background: #FFFFFF; border: 1px solid #E4E4E4; padding: 30px 26px; cursor: pointer;" style-hover="border-color: #C41230;" sc-camel-on-click="{{ goProjects }}">
+              <div style="width: 30px; height: 4px; background: #C41230; margin-bottom: 18px;"></div>
+              <div style="font-size: 17px; font-weight: 700; margin-bottom: 10px;">{{ area.title }}</div>
+              <div style="font-size: 14.5px; line-height: 1.6; color: #63666A;">{{ area.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- PEOPLE -->
+  <sc-if value="{{ isPeople }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="People" style="flex: 1; max-width: 1080px; margin: 0 auto; padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 48px) 100px; width: 100%;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C41230; margin-bottom: 14px;">People</div>
+      <h1 style="font-size: 40px; font-weight: 800; margin: 0 0 48px;">Our Team</h1>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; padding-bottom: 48px; border-bottom: 1px solid #E4E4E4; margin-bottom: 48px;">
+        <img src="f72bbb2b-b0fc-4c55-88bb-a47021cace0f" alt="James (Drew) Beauchamp headshot" style="width: 150px; height: 150px; flex-shrink: 0; object-fit: cover; object-position: 50% 75%; border: 1px solid #D6D6D6;">
+        <div style="flex: 1; min-width: 240px;">
+          <div style="font-size: 24px; font-weight: 700; margin-bottom: 4px;">James (Drew) Beauchamp, PhD</div>
+          <div style="font-size: 14.5px; color: #C41230; font-weight: 600; margin-bottom: 14px;">Assistant Professor, Biomedical Engineering &amp; Neuroscience Institute<br>Carnegie Mellon University</div>
+          <div style="font-size: 14.5px; line-height: 1.7; color: #63666A; max-width: 560px; margin-bottom: 14px;">Likes coffee, cycling, and starting new projects.</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+            <a href="https://www.linkedin.com/in/james-drew-beauchamp" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 4px; background: #0A66C2; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;">in</span>
+              LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=zmPty2AAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #4285F4; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;">G</span>
+              Google Scholar
+            </a>
+            <a href="https://orcid.org/0000-0003-2288-8672" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #A6CE39; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;">iD</span>
+              ORCID
+            </a>
+            <a href="https://www.cmu.edu/ni/people/faculty/drew-beauchamp" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #C41230; color: #FFFFFF; font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center;">NI</span>
+              Neuroscience Institute
+            </a>
+            <a href="https://www.cmu.edu/bme/People/Faculty/profile/jbeaucha.html" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #141414; color: #FFFFFF; font-size: 8px; font-weight: 800; display: flex; align-items: center; justify-content: center;">BME</span>
+              CMU BME
+            </a>
+            <a href="mailto:jabeauchamp@cmu.edu" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: #63666A; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center;">@</span>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #141414; margin-bottom: 24px;">Lab Members</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px;">
+        <sc-for list="{{ members }}" as="person" hint-placeholder-count="4">
+          <div style="border: 1px solid #E4E4E4; padding: 20px;">
+            <sc-if value="{{ person.photo }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ person.photo }}" alt="{{ person.name }}" style="width: 100%; height: 120px; object-fit: cover; object-position: {{ person.photoPos }}; border: 1px solid #D6D6D6; margin-bottom: 16px;">
+            </sc-if>
+            <sc-if value="{{ person.noPhoto }}" hint-placeholder-val="{{ true }}">
+              <div style="width: 100%; height: 120px; background: #E9E9E9; border: 1px solid #D6D6D6; margin-bottom: 16px; position: relative; overflow: hidden;">
+                <div style="position: absolute; left: 50%; top: 24%; width: 40px; height: 40px; margin-left: -20px; border-radius: 50%; background: #BDBDBD;"></div>
+                <div style="position: absolute; left: 50%; top: 66%; width: 88px; height: 72px; margin-left: -44px; border-radius: 50%; background: #BDBDBD;"></div>
+              </div>
+            </sc-if>
+            <div style="font-size: 15px; font-weight: 700; margin-bottom: 3px;">{{ person.name }}</div>
+            <div style="font-size: 13px; color: #63666A; margin-bottom: 8px;">{{ person.role }}</div>
+            <div style="font-size: 12px; color: #8A8A8A;">{{ person.likes }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #141414; margin-bottom: 24px; margin-top: 48px;">Collaborators</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+        <sc-for list="{{ collaborators }}" as="collab" hint-placeholder-count="4">
+          <div style="border: 1px solid #E4E4E4; padding: 16px 22px; width: 220px; max-width: 100%;">
+            <sc-if value="{{ collab.hasPhoto }}" hint-placeholder-val="{{ false }}">
+              <img src="{{ collab.photo }}" alt="{{ collab.name }}" style="width: 100%; height: 140px; object-fit: cover; object-position: {{ collab.photoPos }}; border: 1px solid #D6D6D6; margin-bottom: 14px; display: block;">
+            </sc-if>
+            <sc-if value="{{ collab.noPhoto }}" hint-placeholder-val="{{ true }}">
+              <div style="width: 100%; height: 140px; background: #E9E9E9; border: 1px solid #D6D6D6; margin-bottom: 14px; position: relative; overflow: hidden;">
+                <div style="position: absolute; left: 50%; top: 24%; width: 46px; height: 46px; margin-left: -23px; border-radius: 50%; background: #BDBDBD;"></div>
+                <div style="position: absolute; left: 50%; top: 66%; width: 100px; height: 82px; margin-left: -50px; border-radius: 50%; background: #BDBDBD;"></div>
+              </div>
+            </sc-if>
+            <div style="font-size: 14.5px; font-weight: 700; margin-bottom: 3px;">{{ collab.name }}</div>
+            <div style="font-size: 12.5px; color: #63666A;">{{ collab.affiliation }}</div>
+            <sc-if value="{{ collab.hasLikes }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size: 12px; color: #8A8A8A; margin-top: 8px;">{{ collab.likes }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- PROJECTS -->
+  <sc-if value="{{ isProjects }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Projects" style="flex: 1; max-width: 1080px; margin: 0 auto; padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 48px) 100px; width: 100%;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C41230; margin-bottom: 14px;">Research</div>
+      <h1 style="font-size: 40px; font-weight: 800; margin: 0 0 28px;">Research</h1>
+
+      <div style="margin-bottom: 52px;">
+        <div style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Lab Overview</div>
+        <p style="font-size: 16px; line-height: 1.75; color: #3A3A3A; margin: 0; max-width: 720px;">{{ labOverview }}</p>
+      </div>
+
+      <sc-for list="{{ projects }}" as="proj" hint-placeholder-count="4">
+        <div style="padding-top: 32px; border-top: 1px solid #E4E4E4; margin-bottom: 32px;">
+          <div style="display: flex; gap: 16px; align-items: baseline; margin-bottom: 12px;">
+            <div style="font-size: 15px; font-weight: 800; color: #C41230; flex-shrink: 0;">{{ proj.num }}</div>
+            <div style="font-size: 20px; font-weight: 700;">{{ proj.title }}</div>
+          </div>
+          <p style="font-size: 15.5px; line-height: 1.75; color: #3A3A3A; margin: 0 0 0 31px; max-width: 700px;">{{ proj.body }}</p>
+
+          <sc-for list="{{ proj.subs }}" as="sub" hint-placeholder-count="0">
+            <div style="margin: 20px 0 0 31px; max-width: 700px;">
+              <div style="font-size: 15px; margin-bottom: 6px;"><span style="font-weight: 800; color: #C41230;">{{ sub.num }}</span> <span style="font-weight: 700;">{{ sub.title }}</span></div>
+              <p style="font-size: 15px; line-height: 1.7; color: #3A3A3A; margin: 0;">{{ sub.body }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <!-- OPEN POSITIONS -->
+  <sc-if value="{{ isPositions }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Open Positions" style="flex: 1; max-width: 900px; margin: 0 auto; padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 48px) 100px; width: 100%;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C41230; margin-bottom: 14px;">Join Us</div>
+      <h1 style="font-size: 40px; font-weight: 800; margin: 0 0 20px;">Open Positions</h1>
+      <p style="font-size: 16px; line-height: 1.7; color: #63666A; margin: 0 0 40px; max-width: 640px;">The Output Layer Lab is always looking to connect with curious, motivated researchers across levels of experience.</p>
+
+      <div style="background: rgba(196, 18, 48, 0.06); border-left: 3px solid #C41230; padding: 30px 32px; margin-bottom: 40px;">
+        <div style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">{{ mentorship.title }}</div>
+        <div style="font-size: 14.5px; line-height: 1.7; color: #141414; text-align: justify;">{{ mentorship.desc }}</div>
+      </div>
+
+      <div style="border: 1px solid #E4E4E4; border-left: 3px solid #C41230; padding: 30px 32px; margin-bottom: 22px;">
+        <div style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">{{ masters.title }}</div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #63666A; margin: 0 0 24px;">{{ masters.intro }}</p>
+
+        <sc-for list="{{ masters.areas }}" as="area" hint-placeholder-count="3">
+          <div style="padding-top: 20px; border-top: 1px solid #E4E4E4; margin-bottom: 4px;">
+            <div style="display: flex; gap: 12px; align-items: baseline; margin-bottom: 8px;">
+              <div style="font-size: 14px; font-weight: 800; color: #C41230; flex-shrink: 0;">{{ area.num }}</div>
+              <div style="font-size: 16px; font-weight: 700;">{{ area.title }}</div>
+            </div>
+            <p style="font-size: 14px; line-height: 1.7; color: #63666A; margin: 0 0 0 26px;">{{ area.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="border: 1px solid #E4E4E4; border-left: 3px solid #C41230; padding: 30px 32px; margin-bottom: 22px;">
+        <div style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">{{ phd.title }}</div>
+        <p style="font-size: 14.5px; line-height: 1.7; color: #63666A; margin: 0 0 16px;">{{ phd.desc }}</p>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <sc-for list="{{ phd.programs }}" as="prog" hint-placeholder-count="3">
+            <a href="{{ prog.url }}" target="_blank" rel="noopener" style="font-size: 14.5px; font-weight: 600;">{{ prog.name }}</a>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-for list="{{ positions }}" as="pos" hint-placeholder-count="1">
+        <div style="border: 1px solid #E4E4E4; border-left: 3px solid #C41230; padding: 30px 32px; margin-bottom: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px;">
+          <div>
+            <div style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">{{ pos.title }}</div>
+            <div style="font-size: 14.5px; line-height: 1.7; color: #63666A; max-width: 480px; text-align: left;">{{ pos.desc }}</div>
+          </div>
+          
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <!-- UPDATES -->
+  <sc-if value="{{ isUpdates }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Updates" style="flex: 1; max-width: 1080px; margin: 0 auto; padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 48px) 100px; width: 100%;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C41230; margin-bottom: 14px;">Updates</div>
+      <h1 style="font-size: 40px; font-weight: 800; margin: 0 0 48px;">Lab Updates</h1>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
+        <div style="border: 1px solid #E4E4E4; padding: 30px 32px;">
+          <div style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">Social</div>
+          <div style="border: 1px dashed #D6D6D6; padding: 40px 20px; text-align: center; font-family: 'Courier New', monospace; font-size: 12px; color: #8A8A8A; letter-spacing: 0.03em;">Coming soon...</div>
+        </div>
+        <div style="border: 1px solid #E4E4E4; padding: 30px 32px;">
+          <div style="font-size: 20px; font-weight: 700; margin-bottom: 16px;">Professional</div>
+          <div style="border: 1px dashed #D6D6D6; padding: 40px 20px; text-align: center; font-family: 'Courier New', monospace; font-size: 12px; color: #8A8A8A; letter-spacing: 0.03em;">Coming soon...</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- CONTACT -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+    <div data-screen-label="Contact" style="flex: 1; max-width: 640px; margin: 0 auto; padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 48px) 100px; width: 100%;">
+      <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C41230; margin-bottom: 14px;">Contact</div>
+      <h1 style="font-size: 40px; font-weight: 800; margin: 0 0 16px;">Get Connected</h1>
+      <p style="font-size: 14px; line-height: 1.7; color: #63666A; margin: 0 0 40px">Reach out about anything. <br><i>Or email directly at <a href="mailto:jabeauchamp@cmu.edu">jabeauchamp@cmu.edu</a>.</i></p>
+
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="border: 1px solid #E4E4E4; border-left: 3px solid #C41230; padding: 28px 30px; font-size: 15px; color: #141414;">Thanks — your message has been noted. We'll follow up soon.</div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 7px;">Name</div>
+            <input style="width: 100%; padding: 12px 14px; border: 1px solid #D6D6D6; font-size: 14px; font-family: inherit; border-radius: 2px;" style-focus="border-color: #C41230; outline: none;" value="{{ name }}" sc-camel-on-change="{{ setName }}">
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 7px;">Email</div>
+            <input style="width: 100%; padding: 12px 14px; border: 1px solid #D6D6D6; font-size: 14px; font-family: inherit; border-radius: 2px;" style-focus="border-color: #C41230; outline: none;" value="{{ email }}" sc-camel-on-change="{{ setEmail }}">
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; margin-bottom: 7px;">Message</div>
+            <textarea style="width: 100%; padding: 12px 14px; border: 1px solid #D6D6D6; font-size: 14px; font-family: inherit; min-height: 110px; resize: vertical; border-radius: 2px;" style-focus="border-color: #C41230; outline: none;" value="{{ message }}" sc-camel-on-change="{{ setMessage }}"></textarea>
+          </div>
+          <button style="background: #141414; color: #FFFFFF; border: none; padding: 13px 24px; font-size: 14px; font-weight: 600; cursor: pointer; align-self: flex-start; margin-top: 6px; border-radius: 2px;" style-hover="background: #333;" sc-camel-on-click="{{ submit }}">{{ sendLabel }}</button>
+          <sc-if value="{{ submitError }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size: 13.5px; color: #C41230;">Something went wrong sending your message. Please try again or email us directly.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <div style="border-top: 1px solid #E4E4E4; padding: 22px clamp(16px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center;">
+    <div style="font-size: 12.5px; color: #8A8A8A;">© 2026 The Output Layer Lab · Carnegie Mellon University</div>
+    <div style="font-size: 12.5px; color: #8A8A8A;">Neuromotor systems and technology</div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = {
+    page: 'home',
+    name: '',
+    email: '',
+    message: '',
+    submitted: false
+  };
+
+  FOCUS_AREAS = [
+    { title: 'Neuromotor Control in Health, Disease, and Injury', desc: '' },
+    { title: 'Assistive and Rehabilitative Technology', desc: '' },
+    { title: 'Noninvasive Indexing of Arousal and Attentional State', desc: '' }
+  ];
+
+  MEMBERS = [
+    { name: 'Andy Vo', role: 'BME PhD Student', likes: 'Likes: climbing, video games, and sensation', photo: 'assets/andy-vo.jpg', photoPos: '50% 80%' },
+    { name: 'Kate Mould', role: 'BME MS Student', likes: 'Likes:', photo: null },
+    { name: 'Anabelle Creveling', role: 'MINT MS Student', likes: 'Likes:', photo: null },
+    { name: 'Vicky Yang', role: 'MINT MS Student', likes: 'Likes: theater, photography, and spending time with my cat Kokomi.', photo: 'assets/vicky-yang.jpg', photoPos: '50% 58%' },
+    { name: 'Ben Kadison', role: 'Undergraduate Researcher', likes: 'Likes: espresso, traveling, decomposing time-series data', photo: 'assets/ben-kadison.jpg', photoPos: '50% 52%' }
+  ];
+
+  COLLABORATORS = [
+    { name: 'Prakarsh Yadav', affiliation: 'PhD Student', likes: 'Likes: video games, soccer, trivia', photo: 'assets/prakarsh-yadav.jpg', photoPos: '50% 25%' }
+  ];
+
+  LAB_OVERVIEW = 'Our lab develops and applies neurotechnology to open a window into the human central nervous system. We use the output layer of the neuromotor system (spinal motoneurons) to estimate the upstream signalling within spinal, cortical, and subcortical structures. We ask how people control movement, what goes wrong in neural pathology and injury, and whether we can restore function using neurotechnology.';
+
+  PROJECTS = [
+    {
+      num: '1',
+      title: 'Estimating the latent inputs controlling motor output',
+      body: 'Spinal motoneurons are the final common pathway through which all motor intent flows, converting central commands into muscle contractions and, ultimately, movement. Importantly, the firing behavior of motoneurons can be estimated with high-density surface electromyography (HDsEMG). We are developing approaches to estimate the synaptic inputs a motoneuron receives, along with its intrinsic properties, based on its firing behavior alone. Currently, this takes the form of a reverse engineering approach: we use the observed output behavior of a motoneuron and invert it to recover the underlying input commands, combining generative biophysical modeling with manifold optimization. Ongoing efforts are extending this framework with machine learning and AI methods.',
+      subs: []
+    },
+    {
+      num: '2',
+      title: 'Motor commands and motoneuron properties in neural injury and disease',
+      body: 'How do the synaptic inputs to motoneurons, and their intrinsic properties, change following neural injury or disease, and how do these changes contribute to motor impairment? The natural follow-up question is whether we can restore or mediate the differences we observe. Our initial efforts focus on stroke and traumatic brain injury (TBI).',
+      subs: [
+        { num: '2.1', title: 'Stroke and vagus nerve stimulation.', body: 'We are investigating vagus nerve stimulation (VNS), an FDA-approved treatment, to understand whether it produces the neurophysiological changes its proposed mechanism predicts, how those changes shape motoneuron behavior, and whether motoneuron behavior can be used a priori to predict an individual\u2019s response profile.' },
+        { num: '2.2', title: 'TBI and locus coeruleus-norepinephrine dysfunction.', body: 'Supported by the Chuck Noll Foundation, this project uses spinal motoneurons as a noninvasive window into locus coeruleus-norepinephrine (LC-NE) dysfunction in chronic TBI. The work reframes motor impairment in this population, moving it from an opaque behavioral phenotype toward a tractable circuit-level problem, opening a path toward mechanism-based patient stratification and the rational deployment of emerging LC-directed therapies.' }
+      ]
+    },
+    {
+      num: '3',
+      title: 'Noninvasive indexing of arousal and attentional state',
+      body: 'Spinal motoneurons express channels sensitive to endogenous neuromodulators, including norepinephrine and serotonin, making their firing behavior a unique, peripherally accessible window into a person\u2019s internal state. We are developing computational approaches that use motoneuron firing patterns to noninvasively index fluctuations in arousal and attentional state in humans, with the goal of turning a peripheral electrophysiological signal into a real-time readout of central neuromodulatory tone.',
+      subs: []
+    },
+    {
+      num: '4',
+      title: 'Influence of internal state on motor control',
+      body: 'Monoamines govern the excitability of much of the nervous system, including the gain state of spinal motoneurons. We are interested in how this gain state, and the monoaminergic drive from the brainstem that controls it, fits within traditional frameworks of motor control. Is gain state learned, perceived, or predicted, and through what mechanisms?',
+      subs: []
+    }
+  ];
+
+  MASTERS = {
+    title: "Master's Students",
+    intro: "We welcome master's students across a broad spectrum of backgrounds. Reach out with your background and interests. A core mission of the lab is to use spinal motoneurons as a window into how the human nervous system operates. Our approach spans several areas, so students can contribute in different ways depending on their skills and interests.",
+    areas: [
+      { num: '1', title: 'Computational & Modeling', body: 'We develop computational approaches to reverse engineer the inputs that spinal motoneurons receive, treating them as the output layer of the biological neural network and decoding their behavior to map the network itself. Students interested in signal processing, biomedical engineering, or computational neuroscience fit well here.' },
+      { num: '2', title: 'Clinical & Translational Research', body: 'Our computational work runs parallel to our human clinical research, applying the same motor unit decoding techniques to pathologies like stroke, TBI, and spinal cord injury. We also work with implanted stimulating electrodes to help restore movement. Relevant backgrounds include neuroengineering, clinical research, and biomechanics.' },
+      { num: '3', title: 'Experimental & Systems Engineering', body: 'We use experimental paradigms to interface with human participants, including robotic systems that control and perturb movement while recording motoneuron activity. Students interested in robotics, mechatronics, or experimental design will find opportunities here.' }
+    ]
+  };
+
+  MENTORSHIP = { title: 'Mentorship Strategy', desc: 'Our mentorship strategy and lab dynamic hinge on the premise that everyone is unique. No one shares the same background, prior experiences, or beliefs, and that\u2019s what makes us a strong team. The mentorship we offer is unique to the individual: we want everyone in the lab to become the best possible version of themselves and achieve their goals with confidence. Upon joining, we\u2019ll meet with you regularly to define your objectives and how we can best help you reach them, and we\u2019ll set a communication and work-plan strategy tailored to how you work and communicate best. We ultimately believe that if you are successful, the lab is successful.' };
+
+  PHD = {
+    title: 'PhD Students',
+    desc: 'We are recruiting PhD students for upcoming cohorts. Get in touch to discuss fit, ongoing projects, and the application process. We are recruiting for the following programs:',
+    programs: [
+      { name: 'Biomedical Engineering', url: 'https://www.cmu.edu/bme/Academics/graduate-programs/phd_program.html' },
+      { name: 'Ph.D. in Systems Neuroscience (PSN)', url: 'https://www.cmu.edu/ni/academics/grad/programs/phd-systems-neuroscience' },
+      { name: 'Ph.D. in Neural Computation (PNC)', url: 'https://www.cmu.edu/ni/academics/grad/programs/phd-neural-computation' }
+    ]
+  };
+
+  POSITIONS = [
+    { title: 'Postdoctoral Researcher', desc: 'We are recruiting a postdoctoral researcher to help lead ongoing projects and expand our lab in new directions. Get in touch to discuss fit, current projects, and available funding.' }
+  ];
+
+  goTo(page) {
+    this.setState({ page });
+  }
+
+  async submitContact() {
+    this.setState({ sending: true, submitError: false });
+    try {
+      const res = await fetch('https://formspree.io/f/mjgnvdzg', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email,
+          message: this.state.message
+        })
+      });
+      if (res.ok) {
+        this.setState({ submitted: true, sending: false });
+      } else {
+        this.setState({ submitError: true, sending: false });
+      }
+    } catch (e) {
+      this.setState({ submitError: true, sending: false });
+    }
+  }
+
+  navStyle(key) {
+    const active = this.state.page === key;
+    return {
+      fontSize: '14px',
+      fontWeight: active ? 700 : 500,
+      color: active ? '#C41230' : '#141414',
+      cursor: 'pointer'
+    };
+  }
+
+  renderVals() {
+    const page = this.state.page;
+    const navDefs = [
+      { key: 'home', label: 'Home' },
+      { key: 'people', label: 'People' },
+      { key: 'projects', label: 'Research' },
+      { key: 'positions', label: 'Open Positions' },
+      { key: 'updates', label: 'Updates' }
+    ];
+
+    return {
+      isHome: page === 'home',
+      isPeople: page === 'people',
+      isProjects: page === 'projects',
+      isPositions: page === 'positions',
+      isUpdates: page === 'updates',
+      isContact: page === 'contact',
+
+      navItems: navDefs.map(n => ({
+        label: n.label,
+        style: this.navStyle(n.key),
+        onClick: () => this.goTo(n.key)
+      })),
+
+      goHome: () => this.goTo('home'),
+      goPeople: () => this.goTo('people'),
+      goProjects: () => this.goTo('projects'),
+      goContact: () => this.goTo('contact'),
+
+      focusAreas: this.FOCUS_AREAS,
+      members: this.MEMBERS.map(m => ({ ...m, noPhoto: !m.photo })),
+      collaborators: this.COLLABORATORS.map(c => ({ ...c, hasPhoto: !!c.photo, noPhoto: !c.photo, hasLikes: !!c.likes })),
+      labOverview: this.LAB_OVERVIEW,
+      projects: this.PROJECTS,
+      mentorship: this.MENTORSHIP,
+      masters: this.MASTERS,
+      phd: this.PHD,
+      positions: this.POSITIONS,
+
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message,
+      setName: (e) => this.setState({ name: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      sending: this.state.sending,
+      submitError: this.state.submitError,
+      sendLabel: this.state.sending ? 'Sending…' : 'Send Message',
+      submit: () => this.submitContact()
+    };
+  }
+}
+</script>
+
+
+</body></html>
