@@ -1,53 +1,50 @@
 # (C) Redesign architecture: agents, phases, ownership
 
-## Design thesis
-The lab reads the brain from its output: motoneuron spike trains. The site does the same.
-Home hero = an HD-sEMG grid that decomposes into a live motor unit raster. Every page has one
-science visual. Black #141414 + Carnegie Red #C41230 + white, Source Serif for prose, Open Sans
-for UI, a mono for data labels. Research question as the h1, not the lab name.
+Design brief: `docs/DESIGN.md`. Research: `research/00-04`.
 
-## Sitemap (real URLs, Astro static)
-`/` hero viz, thesis, 4 project cards, stats band, latest news, join CTA
-`/research` + `/research/<slug>` 4 projects, each with its viz and its papers
-`/people` PI, members, collaborators, alumni (photos, no blank fields)
-`/publications` generated from DOI list via Crossref, filter by type/year, copy-cite
-`/join` mentorship, MS tracks, PhD programs, postdoc
-`/news` typed feed (paper, talk, grant, member); replaces "Coming soon"
-`/contact` Formspree mjgnvdzg
+## Stack
+Vite 8 + React 19 + TypeScript + react-router 8 (BrowserRouter, `dist/404.html` SPA fallback for
+GitHub Pages) + Tailwind 4 (`@theme` tokens) + motion 14. Canvas 2D / SVG for science viz.
+"Backend" = build-time data pipeline: `site/scripts/fetch-publications.mjs` pulls ORCID +
+Crossref into `site/src/content/publications.json`. Contact form posts to Formspree. No runtime
+server: the target host (GitHub Pages) is static.
+
+## Code layout (ownership)
+| Path | Owner |
+|---|---|
+| `site/src/App.tsx`, `layouts/`, `components/ui/`, `lib/`, `index.css`, `package.json`, `viz/types.ts`, `viz/index.ts` | lead (main thread) |
+| `site/src/content/**`, `site/scripts/**`, `site/public/people/**` | content-steward |
+| `site/src/components/viz/<Name>/**` | viz-builder (one per viz) |
+| `site/src/pages/<Page>.tsx` + `site/src/components/<page>/**` | page-builder (one per page) |
+
+Contracts that let everything run in parallel:
+- `viz/types.ts`: props per viz. Pages code against it while viz are still stubs.
+- `content/types.ts`: data shapes. Pages render any length, optional fields omitted.
+- Tokens in `index.css`. Nobody adds colors or fonts.
 
 ## Agent topology (orchestrator-worker)
-Lead = main thread. Workers = `.claude/agents/*` plus global `reviewer`, `verifier`, `researcher`.
+Lead = main thread. Workers defined in `.claude/agents/`; global `reviewer`, `verifier`,
+`researcher` reused.
 
-| Agent | Model | Owns (only writes here) | Parallel? |
+| Agent | Model | Count | Isolation |
 |---|---|---|---|
-| lead (main) | inherit | `site/astro.config.*`, `site/src/layouts/`, `site/src/styles/`, shared `components/ui/`, merges | n/a |
-| content-steward | sonnet | `site/src/content/**`, `site/public/people/**` | 1 at a time |
-| page-builder | sonnet | one `site/src/pages/<page>` + `components/<page>/` | yes, 1 per page, worktree |
-| viz-builder | opus | `site/src/components/viz/<Name>/` + `pages/lab/<name>.astro` | yes, 1 per viz, worktree |
-| site-auditor | sonnet | read-only | after each merge |
-| reviewer (global) | opus | read-only | per worker branch before merge |
-| verifier (global) | sonnet | read-only | final content check before PI demo |
+| researcher | sonnet | 5 (done) | none |
+| viz-builder | opus | 4: EmgHero, RecruitmentRaster, NeuromodDial, PathwayStory | git worktree per branch |
+| page-builder | sonnet | 7: Home, Research, People, Publications, News, Join, Contact | git worktree per branch |
+| content-steward | sonnet | 1: publications pipeline | git worktree |
+| reviewer | opus | per merged batch | read-only |
+| site-auditor | sonnet | after merge | read-only |
 
-Conflict rule: ownership paths never overlap. A worker that needs a shared file stops and
-reports; the lead makes that change on main and workers rebase.
+Worktrees live in `../BLR-wt/<branch>`, created by the lead with deps installed. Workers commit
+to their branch, never push. Lead merges in order: content -> viz -> pages, runs build after
+each, then deletes the worktree.
 
 ## Phases
-| # | Phase | Who | Runs in parallel | Verify |
-|---|---|---|---|---|
-| 0 | Research | 3x researcher | yes | `research/00-03` written, DOIs Crossref-checked |
-| 1 | Foundation: Astro 7.4.2 scaffold, tokens, fonts, layout shell, content schemas | lead | no (blocks all) | `npm run build` green, schemas compile |
-| 2 | Content migration + publications script | content-steward | with phase 3 | every field sourced, `astro check` clean |
-| 3 | Viz: HD-sEMG hero, recruitment raster, neuromod dial, reverse-engineering | 4x viz-builder | yes, 4 worktrees | each `/lab/<viz>` renders, <40 KB, reduced-motion ok |
-| 4 | Pages: home, research, people, publications, join, news, contact | 7x page-builder | yes, after 2 | per-page build green |
-| 5 | Review + merge | reviewer per branch, lead merges | reviews parallel | no findings open |
-| 6 | Audit | site-auditor | no | Lighthouse >=95 x4, 0 axe, 0 broken links, home <300 KB |
-| 7 | PI demo | lead + verifier | no | preview URL, PI sign-off, then PR to JABeauchamp/BeauchampLab |
-
-Critical path: 1 -> 2 -> 4 -> 5 -> 6 -> 7. Viz (3) runs beside 2 and must land before 4's home page.
-
-## Open questions for Prof Beauchamp (batch into one message)
-1. OK to redesign, and deploy via PR to JABeauchamp/BeauchampLab (Astro build via Actions)?
-2. Chuck Noll Foundation funding: confirm wording; any other grants to list?
-3. One anonymised real spike-train file for the raster viz? Real beats simulated.
-4. Missing photos + "Likes" for Kate Mould and Anabelle Creveling; alumni list.
-5. News items to seed the feed (papers, talks, new members since lab start).
+| # | Phase | Parallel | Verify |
+|---|---|---|---|
+| 0 | Research (5 researchers + Chrome pass) | yes | research/00-04 |
+| 1 | Foundation: shell, tokens, content, contracts, stubs | lead only | build green |
+| 2 | 12 workers: 4 viz + 7 pages + 1 content | yes | each branch builds |
+| 3 | Merge + integrate | lead | build green, visual pass in Chrome |
+| 4 | Review + audit | reviewer, site-auditor | no open findings, Lighthouse >= 90 |
+| 5 | Demo to Prof Beauchamp | lead | preview link, then PR to JABeauchamp/BeauchampLab on his OK |
