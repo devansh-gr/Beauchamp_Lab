@@ -85,7 +85,14 @@ function Footer() {
         </div>
       </Container>
       <Container className="border-t border-steel py-5 text-xs">
-        © {new Date().getFullYear()} {LAB.name}, {LAB.university}
+        <p>
+          © {new Date().getFullYear()} {LAB.name}, {LAB.university}
+        </p>
+        <p className="mt-2 max-w-4xl leading-relaxed text-iron">
+          Credits: Cerebral cortex from a single-subject MRI reconstruction, Brain for Blender, A. M. Winkler, brainder.org
+          (CC BY-SA 3.0). Other anatomy from BodyParts3D, The Database Center for Life Science (CC BY-SA 2.1 JP). Spinal
+          cord path, motor axon and electrode grid are schematic.
+        </p>
       </Container>
     </footer>
   )

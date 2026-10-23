@@ -31,9 +31,7 @@ export function PathwayFigure() {
       </div>
       <figcaption className="mt-3 max-w-3xl font-serif text-sm leading-relaxed text-body">
         The motor pathway: brain, brainstem and spinal cord, and the biceps brachii with an 8 x 8 high-density surface EMG
-        grid. Cerebral cortex from a single-subject MRI reconstruction, Brain for Blender, A. M. Winkler, brainder.org (CC BY-SA
-        3.0). Other anatomy from BodyParts3D, The Database Center for Life Science (CC BY-SA 2.1 JP). Spinal cord path,
-        motor axon and electrode grid are schematic.
+        grid. Anatomy credits are listed at the bottom of the page.
       </figcaption>
     </figure>
   )
