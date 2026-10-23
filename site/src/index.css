@@ -3,9 +3,11 @@
 @theme {
   --color-ink: #0b0b0c;
   --color-ink-2: #141414;
+  /* Body copy grey, as on CMU Engineering lab pages. */
+  --color-body: #4b4b4b;
   --color-ink-3: #1f1f21;
-  --color-paper: #f6f4ef;
-  --color-paper-2: #ece9e1;
+  --color-paper: #ffffff;
+  --color-paper-2: #f5f5f5;
   --color-red: #c41230;
   --color-red-bright: #ef3a47;
   --color-iron: #6d6e71;
@@ -15,12 +17,6 @@
   --font-sans: 'Open Sans Variable', Helvetica, ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
-
-  --text-display: clamp(2.75rem, 7vw, 6.5rem);
-  --text-display--line-height: 1.02;
-  --text-display--letter-spacing: -0.025em;
-
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -32,13 +28,6 @@
   }
   body {
     font-family: var(--font-sans);
-  }
-  /* Set by the home story while it is on screen: on touch screens one swipe moves one step.
-     Mouse and trackpad stepping is handled in Story.tsx. */
-  @media (pointer: coarse) {
-    html.story-snap {
-      scroll-snap-type: y mandatory;
-    }
   }
   ::selection {
     background: var(--color-red);
@@ -61,10 +50,3 @@
   }
 }
 
-/* Iron (#6d6e71) passes on paper but not on ink: lift it inside dark sections. */
-.bg-ink .text-iron {
-  color: #9a9b9e;
-}
-.bg-ink .bg-paper .text-iron {
-  color: var(--color-iron);
-}

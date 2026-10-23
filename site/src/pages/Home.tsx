@@ -1,93 +1,146 @@
 import { Link } from 'react-router'
-import Hero from '../components/home/Hero'
-import Story from '../components/home/Story'
-import Stats from '../components/home/Stats'
-import Feed from '../components/home/Feed'
-import { Container, Eyebrow, Reveal } from '../components/ui/Reveal'
-import { FOCUS_AREAS, LAB, PROJECTS } from '../content/lab'
+import { Container, Eyebrow, linkCls } from '../components/ui/Reveal'
+import { PathwayFigure } from '../components/research/ProjectViz'
+import { Citation } from '../components/publications/Citation'
+import { FOCUS_AREAS, LAB, PI, PROJECTS } from '../content/lab'
+import { PUBLICATIONS } from '../content/publications'
+
+const AFFILIATIONS = [
+  { label: 'Biomedical Engineering', href: 'https://www.cmu.edu/bme/' },
+  { label: 'Neuroscience Institute', href: 'https://www.cmu.edu/ni/' },
+]
+
+function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section id={id} aria-labelledby={`${id}-h`} className="border-t border-steel py-16 sm:py-20">
+      <Container>
+        <h2 id={`${id}-h`} className="text-3xl font-bold tracking-tight">
+          {title}
+        </h2>
+        {children}
+      </Container>
+    </section>
+  )
+}
 
 export default function Home() {
+  const recent = [...PUBLICATIONS].sort((a, b) => (b.date ?? `${b.year}`).localeCompare(a.date ?? `${a.year}`)).slice(0, 5)
   return (
     <>
-      <Hero />
+      <section className="pt-28 pb-16 sm:pb-20">
+        <Container className="grid gap-12 lg:grid-cols-[2fr_1fr]">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{LAB.name}</h1>
+            <p className="mt-3 text-lg font-semibold text-iron">{LAB.tagline}</p>
+            <p className="mt-8 max-w-2xl font-serif text-lg leading-relaxed text-body">{LAB.overview}</p>
+          </div>
+          <aside className="space-y-8 lg:border-l lg:border-steel lg:pl-8">
+            <div>
+              <Eyebrow>Affiliations</Eyebrow>
+              <ul className="mt-3 space-y-2 font-serif">
+                {AFFILIATIONS.map((a) => (
+                  <li key={a.href}>
+                    <a href={a.href} className={linkCls}>
+                      {a.label}
+                    </a>
+                  </li>
+                ))}
+                <li className="text-body">{LAB.university}</li>
+              </ul>
+            </div>
+            <div>
+              <Eyebrow>Research areas</Eyebrow>
+              <ul className="mt-3 space-y-2 font-serif text-body">
+                {FOCUS_AREAS.map((f) => (
+                  <li key={f.title}>{f.title}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <Eyebrow>Contact</Eyebrow>
+              <a href={`mailto:${LAB.email}`} className={`mt-3 inline-block font-serif ${linkCls}`}>
+                {LAB.email}
+              </a>
+            </div>
+          </aside>
+        </Container>
+      </section>
 
-      <section id="overview" className="bg-paper py-24 sm:py-40" aria-labelledby="overview-h">
-        <Container>
-          <Reveal>
-            <Eyebrow>01 / Overview</Eyebrow>
-            <h2 id="overview-h" className="mt-8 max-w-5xl font-serif text-3xl leading-snug sm:text-5xl sm:leading-tight">
-              {LAB.overview.slice(0, LAB.overview.indexOf('. ') + 1)}
-            </h2>
-            <p className="mt-8 max-w-3xl font-serif text-xl leading-relaxed text-ink-2/60 sm:text-2xl">
-              {LAB.overview.slice(LAB.overview.indexOf('. ') + 2)}
+      <Section id="figure" title="From brain to muscle">
+        <div className="mt-8">
+          <PathwayFigure />
+        </div>
+      </Section>
+
+      <Section id="pi" title="Principal Investigator">
+        <div className="mt-8 grid gap-8 md:grid-cols-[16rem_1fr]">
+          {PI.photo && (
+            <img src={PI.photo} alt={PI.name} width={256} height={320} style={{ objectPosition: PI.photoPos }} className="aspect-[4/5] w-64 object-cover" />
+          )}
+          <div>
+            <h3 className="text-xl font-bold">{PI.name}</h3>
+            <p className="mt-1 text-sm font-semibold text-ink-2">
+              {PI.title}, {PI.dept}
             </p>
-          </Reveal>
-          <ol className="mt-20 grid gap-12 border-t border-ink/15 pt-12 md:grid-cols-3">
-            {FOCUS_AREAS.map((f, i) => (
-              <li key={f.title}>
-                <Reveal delay={i * 0.1}>
-                  <p className="font-semibold text-sm text-red">{`0${i + 1}`}</p>
-                  <h3 className="mt-4 text-2xl font-medium tracking-tight">{f.title}</h3>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
+            <ul className="mt-5 space-y-2 font-serif leading-relaxed text-body">
+              {PI.bio.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
+            <p className="mt-5 font-serif">
+              <Link to="/people" className={linkCls}>
+                Full profile and lab members
+              </Link>
+            </p>
+          </div>
+        </div>
+      </Section>
 
-      <Story />
-
-      <section className="bg-paper py-24 sm:py-32" aria-labelledby="projects-h">
-        <Container>
-          <Reveal>
-            <Eyebrow>04 / Research</Eyebrow>
-            <h2 id="projects-h" className="mt-6 text-4xl font-semibold tracking-tight sm:text-6xl">
-              Four lines of work
-            </h2>
-          </Reveal>
-          <ul className="mt-14 grid gap-px bg-ink/15 sm:grid-cols-2">
-            {PROJECTS.map((p, i) => (
-              <li key={p.slug} className="bg-paper">
-                <Reveal delay={(i % 2) * 0.08} className="h-full">
-                  <Link
-                    to={`/research#${p.slug}`}
-                    className="group flex h-full flex-col p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-10"
-                  >
-                    <span className="font-semibold text-sm text-red">{p.num}</span>
-                    <h3 className="mt-6 text-2xl font-medium leading-tight tracking-tight">{p.title}</h3>
-                    <p className="mt-4 font-serif text-lg text-iron">{p.short}</p>
-                    <span className="mt-8 font-semibold text-sm text-red" aria-hidden="true">
-                      <span className="inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
-                    </span>
+      <Section id="research" title="Research">
+        <ol className="mt-8 divide-y divide-steel">
+          {PROJECTS.map((p) => (
+            <li key={p.slug} className="grid gap-2 py-8 md:grid-cols-[3rem_1fr]">
+              <span className="text-sm font-bold text-red">{p.num}</span>
+              <div>
+                <h3 className="text-xl font-bold tracking-tight">
+                  <Link to={`/research#${p.slug}`} className="hover:text-red">
+                    {p.title}
                   </Link>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
+                </h3>
+                <p className="mt-3 max-w-3xl font-serif leading-relaxed text-body">{p.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Section>
 
-      <Stats />
-      <Feed />
+      <Section id="publications" title="Recent publications">
+        <ol className="mt-8 space-y-5">
+          {recent.map((p) => (
+            <li key={p.title}>
+              <Citation pub={p} />
+            </li>
+          ))}
+        </ol>
+        <p className="mt-8 font-serif">
+          <Link to="/publications" className={linkCls}>
+            All publications
+          </Link>
+        </p>
+      </Section>
 
-      <section className="bg-red py-24 text-white sm:py-32" aria-labelledby="join-h">
-        <Container className="flex flex-wrap items-end justify-between gap-10">
-          <Reveal>
-            <Eyebrow className="text-white/70">07 / Join</Eyebrow>
-            <h2 id="join-h" className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              Build the window into the nervous system.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <Link
-              to="/join"
-              className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-medium text-paper transition-colors hover:bg-paper hover:text-ink"
-            >
-              Join the lab <span aria-hidden="true">&rarr;</span>
-            </Link>
-          </Reveal>
-        </Container>
-      </section>
+      <Section id="join" title="Prospective students and postdocs">
+        <p className="mt-6 max-w-3xl font-serif text-lg leading-relaxed text-body">{LAB.joinIntro}</p>
+        <p className="mt-5 font-serif">
+          <Link to="/join" className={linkCls}>
+            Open positions
+          </Link>
+          <span className="mx-3 text-steel">|</span>
+          <Link to="/contact" className={linkCls}>
+            Contact the lab
+          </Link>
+        </p>
+      </Section>
     </>
   )
 }

@@ -48,12 +48,3 @@ export interface Publication {
   source?: string
 }
 
-export type NewsType = 'paper' | 'preprint' | 'lab'
-
-export interface NewsItem {
-  date: string
-  type: NewsType
-  title: string
-  body?: string
-  href?: string
-}

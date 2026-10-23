@@ -1,53 +1,40 @@
 import { PI } from '../../content/lab'
-import { Container, Eyebrow, Reveal } from '../ui/Reveal'
+import { Container, Eyebrow, linkCls } from '../ui/Reveal'
 
 export default function PiFeature() {
   return (
-    <section className="bg-paper py-24 sm:py-32" aria-labelledby="pi-name">
-      <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <Reveal className="lg:col-span-5">
-          <div className="aspect-[4/5] overflow-hidden bg-ink">
-            {PI.photo && <img src={PI.photo} alt={PI.name} style={{ objectPosition: PI.photoPos }} className="h-full w-full object-cover" />}
-          </div>
-        </Reveal>
-        <div className="lg:col-span-7">
-          <Reveal delay={0.1}>
-            <Eyebrow>{PI.role}</Eyebrow>
-            <h2 id="pi-name" className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{PI.name}</h2>
-            <p className="mt-4 font-semibold text-sm uppercase tracking-[0.12em] text-red">{PI.title}</p>
-            <p className="mt-1 font-semibold text-sm uppercase tracking-[0.12em] text-iron">{PI.dept}</p>
-            {PI.likes && <p className="mt-6 font-serif text-lg italic text-iron">{PI.likes}</p>}
-          </Reveal>
-          <Reveal delay={0.2}>
-            <ul className="mt-10 space-y-4 border-t border-ink/15 pt-8 font-serif text-lg leading-relaxed">
+    <section className="py-12" aria-labelledby="pi-name">
+      <Container>
+        <h2 className="text-2xl font-bold tracking-tight">{PI.role}</h2>
+        <div className="mt-8 grid gap-8 md:grid-cols-[16rem_1fr_14rem]">
+          {PI.photo && (
+            <img src={PI.photo} alt={PI.name} width={256} height={320} style={{ objectPosition: PI.photoPos }} className="aspect-[4/5] w-64 object-cover" />
+          )}
+          <div>
+            <h3 id="pi-name" className="text-xl font-bold">{PI.name}</h3>
+            <p className="mt-1 text-sm font-semibold">
+              {PI.title}, {PI.dept}
+            </p>
+            <ul className="mt-5 space-y-2 font-serif text-lg leading-relaxed text-body">
               {PI.bio.map((b) => (
-                <li key={b} className="flex gap-4">
-                  <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
-                  <span>{b}</span>
-                </li>
+                <li key={b}>{b}</li>
               ))}
             </ul>
-          </Reveal>
+            {PI.likes && <p className="mt-5 font-serif text-body">{PI.likes}</p>}
+          </div>
           {PI.links && (
-            <Reveal delay={0.3}>
-              <ul className="mt-10 flex flex-wrap gap-3">
-                {PI.links.map((l) => {
-                  const external = /^https?:/.test(l.href)
-                  return (
-                    <li key={l.href}>
-                      <a
-                        href={l.href}
-                        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="inline-block rounded-full border border-ink/25 px-4 py-2 font-semibold text-xs uppercase tracking-[0.12em] transition hover:border-red hover:bg-red hover:text-paper"
-                      >
-                        {l.label}
-                        {external && <span aria-hidden="true"> &rarr;</span>}
-                      </a>
-                    </li>
-                  )
-                })}
+            <div>
+              <Eyebrow>Links</Eyebrow>
+              <ul className="mt-3 space-y-2 font-serif">
+                {PI.links.map((l) => (
+                  <li key={l.href}>
+                    <a href={l.href} {...(/^https?:/.test(l.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={linkCls}>
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
-            </Reveal>
+            </div>
           )}
         </div>
       </Container>

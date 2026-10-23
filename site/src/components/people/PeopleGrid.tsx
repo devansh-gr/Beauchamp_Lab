@@ -1,22 +1,19 @@
 import type { Person } from '../../content/types'
-import { Container, Eyebrow, Reveal } from '../ui/Reveal'
+import { Container } from '../ui/Reveal'
 import PersonCard from './PersonCard'
 
-export default function PeopleGrid({ eyebrow, title, people, tone }: { eyebrow: string; title: string; people: Person[]; tone: 'paper' | 'paper-2' }) {
+export default function PeopleGrid({ title, people }: { title: string; people: Person[] }) {
   const headingId = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-h`
   return (
-    <section className={`${tone === 'paper' ? 'bg-paper' : 'bg-paper-2'} py-24 sm:py-32`} aria-labelledby={headingId}>
+    <section className="border-t border-steel py-12" aria-labelledby={headingId}>
       <Container>
-        <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 id={headingId} className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
-        </Reveal>
-        <ul className="mt-12 grid grid-cols-2 gap-x-4 gap-y-12 sm:gap-x-6 md:grid-cols-3 lg:grid-cols-4">
-          {people.map((p, i) => (
+        <h2 id={headingId} className="text-2xl font-bold tracking-tight">
+          {title}
+        </h2>
+        <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+          {people.map((p) => (
             <li key={p.slug}>
-              <Reveal delay={Math.min(i, 5) * 0.08}>
-                <PersonCard person={p} />
-              </Reveal>
+              <PersonCard person={p} />
             </li>
           ))}
         </ul>

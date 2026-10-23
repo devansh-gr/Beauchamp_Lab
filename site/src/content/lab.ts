@@ -136,6 +136,6 @@ export const NAV: Link[] = [
   { label: 'Research', href: '/research' },
   { label: 'People', href: '/people' },
   { label: 'Publications', href: '/publications' },
-  { label: 'News', href: '/news' },
   { label: 'Join', href: '/join' },
+  { label: 'Contact', href: '/contact' },
 ]

@@ -4,7 +4,7 @@ import { PublicationFeed } from '../components/publications/PublicationFeed'
 export default function Publications() {
   return (
     <>
-      <PageHeader eyebrow="Publications" title="Publications" />
+      <PageHeader title="Publications" />
       <PublicationFeed />
     </>
   )

@@ -9,7 +9,7 @@ const MESSAGES = {
 }
 
 const field =
-  'mt-2 block w-full border-0 border-b border-paper/30 bg-transparent px-0 py-3 font-sans text-lg text-paper placeholder:text-paper/30 transition-colors focus:border-red-bright focus:outline-none focus-visible:outline-none'
+  'mt-2 block w-full border border-steel bg-paper px-3 py-2 font-serif text-lg text-ink-2 focus:border-red focus:outline-none focus-visible:outline-none'
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>({ kind: 'idle' })
@@ -41,21 +41,21 @@ export function ContactForm() {
   const sending = status.kind === 'sending'
 
   return (
-    <form onSubmit={onSubmit} className="space-y-8">
+    <form onSubmit={onSubmit} className="space-y-6">
       <div>
-        <label htmlFor="contact-name" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-[0.12em] text-iron">
           Name
         </label>
         <input id="contact-name" name="name" type="text" required autoComplete="name" className={field} />
       </div>
       <div>
-        <label htmlFor="contact-email" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-[0.12em] text-iron">
           Email
         </label>
         <input id="contact-email" name="email" type="email" required autoComplete="email" className={field} />
       </div>
       <div>
-        <label htmlFor="contact-message" className="font-semibold text-xs uppercase tracking-[0.18em] text-iron">
+        <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-[0.12em] text-iron">
           Message
         </label>
         <textarea id="contact-message" name="message" required rows={5} className={`${field} resize-y`} />
@@ -63,14 +63,14 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={sending}
-        className="bg-red px-8 py-4 font-semibold text-xs uppercase tracking-[0.18em] text-white transition-colors hover:bg-red-bright disabled:cursor-not-allowed disabled:opacity-50"
+        className="bg-red px-6 py-3 text-sm font-semibold text-white hover:bg-[#9e0e26] disabled:cursor-not-allowed disabled:opacity-50"
       >
         {sending ? 'Sending' : 'Send message'}
       </button>
       <p
         role="status"
         aria-live="polite"
-        className={`min-h-6 font-serif text-lg ${status.kind === 'error' ? 'text-red-bright' : 'text-paper/80'}`}
+        className={`min-h-6 font-serif text-lg ${status.kind === 'error' ? 'text-red' : 'text-body'}`}
       >
         {status.kind === 'sent' ? MESSAGES.sent : status.kind === 'error' ? MESSAGES.error : ''}
       </p>

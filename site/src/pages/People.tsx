@@ -6,10 +6,10 @@ import { PageHeader } from '../components/ui/Reveal'
 export default function People() {
   return (
     <>
-      <PageHeader eyebrow="People" title="People" />
+      <PageHeader title="People" />
       <PiFeature />
-      <PeopleGrid eyebrow="01 / Team" title="Members" people={MEMBERS} tone="paper-2" />
-      {COLLABORATORS.length > 0 && <PeopleGrid eyebrow="02 / Network" title="Collaborators" people={COLLABORATORS} tone="paper" />}
+      <PeopleGrid title="Lab Members" people={MEMBERS} />
+      {COLLABORATORS.length > 0 && <PeopleGrid title="Collaborators" people={COLLABORATORS} />}
     </>
   )
 }

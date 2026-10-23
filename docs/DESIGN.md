@@ -1,5 +1,11 @@
 # (C) Design brief: Output Layer Lab demo
 
+> **Current direction (2026-10-23), supersedes the dark/scrollytelling brief below.** Prof-facing review asked for
+> the register of formal CMU lab sites (NeuroMechatronics, FIG, Biorobotics, Auton, CREATE, Byron Yu). Rules now:
+> white page, Open Sans headings + Source Serif body, Carnegie Red only for links and the active state, plain section
+> labels, lab copy verbatim with no slogans or stat counters, no entrance motion, people grouped by role, publications
+> as year-grouped citations, official CMU wordmark in the footer. The 3D anatomy figure stays as a captioned figure.
+
 Every builder reads this first. Sources for each technique: `research/04-engagement.md`.
 
 ## Thesis

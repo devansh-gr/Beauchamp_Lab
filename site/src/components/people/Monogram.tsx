@@ -5,8 +5,8 @@ export function initials(name: string) {
 
 export default function Monogram({ name }: { name: string }) {
   return (
-    <div role="img" aria-label={`${name}, no photo`} className="flex h-full w-full items-center justify-center bg-ink-3">
-      <span className="text-6xl font-semibold text-paper/80">{initials(name)}</span>
+    <div role="img" aria-label={`${name}, no photo`} className="flex h-full w-full items-center justify-center bg-paper-2">
+      <span className="text-5xl font-semibold text-iron">{initials(name)}</span>
     </div>
   )
 }
