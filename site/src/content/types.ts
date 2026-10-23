@@ -44,6 +44,8 @@ export interface Publication {
   type: PubType
   doi?: string
   firstAuthor?: boolean
+  date?: string
+  source?: string
 }
 
 export type NewsType = 'paper' | 'preprint' | 'lab'
