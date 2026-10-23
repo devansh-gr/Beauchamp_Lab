@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router'
 import { Container } from '../components/ui/Reveal'
 import { LAB, NAV } from '../content/lab'
+import { asset } from '../lib/asset'
 
 function Nav() {
   const { pathname } = useLocation()
@@ -12,7 +13,7 @@ function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-steel bg-paper">
       <Container className="flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-3" aria-label={`${LAB.name} home`}>
-          <img src="/brand/mark.png" alt="" width={32} height={32} className="h-8 w-8" />
+          <img src={asset('/brand/mark.png')} alt="" width={32} height={32} className="h-8 w-8" />
           <span className="text-base font-bold tracking-tight text-ink-2">{LAB.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
@@ -57,7 +58,7 @@ function Footer() {
     <footer className="border-t border-steel bg-paper-2 text-sm text-body">
       <Container className="grid gap-10 py-14 md:grid-cols-[2fr_1fr_1fr]">
         <div>
-          <img src="/brand/wordmark.png" alt={LAB.name} width={520} height={124} className="h-11 w-auto" />
+          <img src={asset('/brand/wordmark.png')} alt={LAB.name} width={520} height={124} className="h-11 w-auto" />
           <p className="mt-5 max-w-sm">
             Department of Biomedical Engineering and Neuroscience Institute
             <br />
@@ -79,7 +80,7 @@ function Footer() {
         <div>
           {/* Official CMU wordmark: unmodified artwork in Carnegie Red, 300px minimum, 1 M-width clear space. */}
           <a href="https://www.cmu.edu" className="-m-3 inline-block p-3">
-            <img src="/brand/cmu-wordmark-red.svg" alt="Carnegie Mellon University" width={300} height={27} className="w-[300px] max-w-full" />
+            <img src={asset('/brand/cmu-wordmark-red.svg')} alt="Carnegie Mellon University" width={300} height={27} className="w-[300px] max-w-full" />
           </a>
         </div>
       </Container>

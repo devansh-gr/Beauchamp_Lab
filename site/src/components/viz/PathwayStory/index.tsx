@@ -4,9 +4,10 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js'
 import type { PathwayStoryProps } from '../types'
+import { asset } from '../../../lib/asset'
 
 // Anatomy: BodyParts3D (DBCLS). Built by scripts/build-anatomy.mjs.
-const URL = '/anatomy/pathway.glb'
+const URL = asset('/anatomy/pathway.glb')
 
 type Step = PathwayStoryProps['step']
 type Part = 'cortex' | 'cerebellum' | 'brainstem' | 'cord' | 'skeleton' | 'axon' | 'biceps' | 'grid'

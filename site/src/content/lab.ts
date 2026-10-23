@@ -1,5 +1,6 @@
 // Copy sourced verbatim from the live site (research/raw/dc_script.js) unless noted.
 import type { FocusArea, Link, Person, Project } from './types'
+import { asset } from '../lib/asset'
 
 export const LAB = {
   name: 'The Output Layer Lab',
@@ -30,7 +31,7 @@ export const PI: Person & { title: string; dept: string; bio: string[] } = {
   title: 'Assistant Professor',
   dept: 'Biomedical Engineering & Neuroscience Institute',
   likes: 'Likes coffee, cycling, and starting new projects.',
-  photo: '/people/drew-beauchamp.jpg',
+  photo: asset('/people/drew-beauchamp.jpg'),
   photoPos: '50% 30%',
   // bio: cmu.edu/bme/People/Faculty/profile/jbeaucha.html
   bio: [
@@ -50,15 +51,15 @@ export const PI: Person & { title: string; dept: string; bio: string[] } = {
 
 // Ordered by seniority (PhD, MS, undergrad), then last name.
 export const MEMBERS: Person[] = [
-  { slug: 'andy-vo', name: 'Andy Vo', role: 'BME PhD Student', likes: 'Likes: climbing, video games, and sensation', photo: '/people/andy-vo.jpg', photoPos: '50% 80%' },
+  { slug: 'andy-vo', name: 'Andy Vo', role: 'BME PhD Student', likes: 'Likes: climbing, video games, and sensation', photo: asset('/people/andy-vo.jpg'), photoPos: '50% 80%' },
   { slug: 'anabelle-creveling', name: 'Anabelle Creveling', role: 'MINT MS Student' },
   { slug: 'kate-mould', name: 'Kate Mould', role: 'BME MS Student' },
-  { slug: 'vicky-yang', name: 'Vicky Yang', role: 'MINT MS Student', likes: 'Likes: theater, photography, and spending time with my cat Kokomi.', photo: '/people/vicky-yang.jpg', photoPos: '50% 58%' },
-  { slug: 'ben-kadison', name: 'Ben Kadison', role: 'Undergraduate Researcher', likes: 'Likes: espresso, traveling, decomposing time-series data', photo: '/people/ben-kadison.jpg', photoPos: '50% 52%' },
+  { slug: 'vicky-yang', name: 'Vicky Yang', role: 'MINT MS Student', likes: 'Likes: theater, photography, and spending time with my cat Kokomi.', photo: asset('/people/vicky-yang.jpg'), photoPos: '50% 58%' },
+  { slug: 'ben-kadison', name: 'Ben Kadison', role: 'Undergraduate Researcher', likes: 'Likes: espresso, traveling, decomposing time-series data', photo: asset('/people/ben-kadison.jpg'), photoPos: '50% 52%' },
 ]
 
 export const COLLABORATORS: Person[] = [
-  { slug: 'prakarsh-yadav', name: 'Prakarsh Yadav', role: 'PhD Student', likes: 'Likes: video games, soccer, trivia', photo: '/people/prakarsh-yadav.jpg', photoPos: '50% 25%' },
+  { slug: 'prakarsh-yadav', name: 'Prakarsh Yadav', role: 'PhD Student', likes: 'Likes: video games, soccer, trivia', photo: asset('/people/prakarsh-yadav.jpg'), photoPos: '50% 25%' },
 ]
 
 export const PROJECTS: Project[] = [
