@@ -77,7 +77,6 @@ export const PROJECTS: Project[] = [
     slug: 'injury-and-disease',
     title: 'Motor commands and motoneuron properties in neural injury and disease',
     short: 'What changes at the motoneuron after stroke and TBI, and can we restore it?',
-    viz: 'PathwayStory',
     body: 'How do the synaptic inputs to motoneurons, and their intrinsic properties, change following neural injury or disease, and how do these changes contribute to motor impairment? The natural follow-up question is whether we can restore or mediate the differences we observe. Our initial efforts focus on stroke and traumatic brain injury (TBI).',
     subs: [
       { num: '2.1', title: 'Stroke and vagus nerve stimulation.', body: 'We are investigating vagus nerve stimulation (VNS), an FDA-approved treatment, to understand whether it produces the neurophysiological changes its proposed mechanism predicts, how those changes shape motoneuron behavior, and whether motoneuron behavior can be used a priori to predict an individual’s response profile.' },

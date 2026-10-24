@@ -22,49 +22,39 @@ const STEPS = [
   },
 ] as const
 
-/** 3D anatomy figure with a stepped pipeline panel beside it. */
+/** 3D anatomy figure with the pathway stages listed beside it. */
 export function PathwayFigure() {
   const [step, setStep] = useState<0 | 1 | 2>(0)
   const go = (i: number) => setStep(Math.max(0, Math.min(2, i)) as 0 | 1 | 2)
   return (
     <figure>
-      <div className="grid border border-steel lg:grid-cols-[1fr_22rem]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_20rem]">
         <div className="bg-ink">
           <Suspense fallback={<div className="h-[480px]" />}>
             <PathwayStory step={step} className="h-[480px] w-full" />
           </Suspense>
         </div>
-        <div className="flex flex-col border-t border-steel bg-paper lg:border-l lg:border-t-0">
-          <p className="px-6 pt-5 text-xs font-bold uppercase tracking-[0.12em] text-iron">
-            Follow the signal, step {step + 1} of 3
-          </p>
-          <ol className="mt-3 flex-1" aria-label="Pathway stages">
+        <div className="flex flex-col">
+          <ol aria-label="Pathway stages" className="divide-y divide-steel border-y border-steel">
             {STEPS.map((s, i) => {
               const active = step === i
               return (
-                <li key={s.title} className={`border-l-2 ${active ? 'border-red bg-paper-2' : 'border-transparent'}`}>
+                <li key={s.title}>
                   <button
                     type="button"
                     aria-pressed={active}
                     onClick={() => go(i)}
-                    className="group flex w-full items-center gap-3 px-6 py-3 text-left hover:bg-paper-2"
+                    className="flex w-full items-baseline gap-4 py-4 text-left"
                   >
-                    <span
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold ${
-                        active ? 'border-red bg-red text-white' : 'border-iron text-iron group-hover:border-red group-hover:text-red'
-                      }`}
-                    >
-                      {i + 1}
-                    </span>
-                    <span className={`font-serif text-lg font-semibold ${active ? 'text-ink' : 'text-ink-2 group-hover:text-red'}`}>
+                    <span className={`text-sm font-bold ${active ? 'text-red' : 'text-iron'}`}>0{i + 1}</span>
+                    <span className={`font-serif text-xl font-semibold ${active ? 'text-red' : 'text-ink-2 hover:text-red'}`}>
                       {s.title}
                     </span>
-                    {!active && <span aria-hidden className="ml-auto text-iron group-hover:text-red">&rsaquo;</span>}
                   </button>
                   {active && (
-                    <div className="px-6 pb-4 pl-15">
-                      <p className="font-serif text-[0.95rem] leading-relaxed text-body">{s.body}</p>
-                      <Link to={s.link.to} className={`mt-2 inline-block font-serif text-sm ${linkCls}`}>
+                    <div className="pb-5 pl-9">
+                      <p className="font-serif leading-relaxed text-body">{s.body}</p>
+                      <Link to={s.link.to} className={`mt-2 inline-block font-serif ${linkCls}`}>
                         {s.link.label}
                       </Link>
                     </div>
@@ -73,23 +63,13 @@ export function PathwayFigure() {
               )
             })}
           </ol>
-          <div className="flex items-center justify-between gap-3 border-t border-steel px-6 py-4">
-            <button
-              type="button"
-              onClick={() => go(step - 1)}
-              disabled={step === 0}
-              className="text-sm font-semibold text-ink-2 hover:text-red disabled:invisible"
-            >
-              &larr; Back
-            </button>
-            <button
-              type="button"
-              onClick={() => go(step === 2 ? 0 : step + 1)}
-              className="border border-red px-4 py-2 text-sm font-semibold text-red transition-colors hover:bg-red hover:text-white"
-            >
-              {step === 2 ? 'Start over' : `Next: ${STEPS[step + 1].title}`} &rarr;
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => go(step === 2 ? 0 : step + 1)}
+            className="mt-5 self-start font-serif text-red hover:underline"
+          >
+            {step === 2 ? 'Start over' : `Next: ${STEPS[step + 1].title}`} &rarr;
+          </button>
         </div>
       </div>
       <figcaption className="mt-3 max-w-3xl font-serif text-sm leading-relaxed text-body">
@@ -103,7 +83,6 @@ export function PathwayFigure() {
 export function ProjectViz({ viz }: { viz: Project['viz'] }) {
   if (!viz) return null
   const cls = 'h-[460px] w-full'
-  if (viz === 'PathwayStory') return <PathwayFigure />
   return (
     <Suspense fallback={<div className={cls} aria-hidden />}>
       <div className="border border-steel p-4 sm:p-6">
