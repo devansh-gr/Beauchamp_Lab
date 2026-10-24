@@ -100,6 +100,43 @@ export function PathwayFigure() {
   )
 }
 
+const RASTER_KEY = [
+  {
+    title: 'Top: force',
+    body: 'How hard the muscle pushes, as a percent of the strongest contraction the person can make (MVC). Here it ramps up to 50% and back down over 10 seconds.',
+  },
+  {
+    title: 'Middle: motor units',
+    body: 'Each row is one motor unit: a single motoneuron and the muscle fibres it drives. Each tick is one pulse it fires. Unit 1 switches on at low force; unit 15 only near the peak.',
+  },
+  {
+    title: 'Bottom: firing rate',
+    body: 'How fast each unit fires, in pulses per second (pps), smoothed. Each line is one unit. Rates climb as force rises and fall as it drops.',
+  },
+]
+
+function RasterKey() {
+  return (
+    <div className="mt-6 border-t border-steel pt-5">
+      <p className="text-xs font-bold uppercase tracking-[0.12em] text-iron">How to read this</p>
+      <dl className="mt-3 grid gap-5 sm:grid-cols-3">
+        {RASTER_KEY.map((k) => (
+          <div key={k.title}>
+            <dt className="font-semibold text-ink-2">{k.title}</dt>
+            <dd className="mt-1 font-serif text-sm leading-relaxed text-body">{k.body}</dd>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-5 max-w-3xl font-serif text-sm leading-relaxed text-body">
+        The takeaway: the nervous system makes more force by switching on more motor units and firing each one faster.
+        Units also switch off at a lower force than they switched on. High-density surface EMG lets us record this
+        firing pattern from the skin, and we work backward from it to estimate the commands the motoneurons received. The
+        data here are simulated; choose Manual and drag the slider to set the force yourself.
+      </p>
+    </div>
+  )
+}
+
 export function ProjectViz({ viz }: { viz: Project['viz'] }) {
   if (!viz) return null
   const cls = 'h-[460px] w-full'
@@ -107,7 +144,12 @@ export function ProjectViz({ viz }: { viz: Project['viz'] }) {
   return (
     <Suspense fallback={<div className={cls} aria-hidden />}>
       <div className="border border-steel p-4 sm:p-6">
-        {viz === 'RecruitmentRaster' && <RecruitmentRaster className={cls} />}
+        {viz === 'RecruitmentRaster' && (
+          <>
+            <RecruitmentRaster className={cls} />
+            <RasterKey />
+          </>
+        )}
         {viz === 'NeuromodDial' && <NeuromodDial className={cls} />}
       </div>
     </Suspense>
