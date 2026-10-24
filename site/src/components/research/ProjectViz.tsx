@@ -94,7 +94,7 @@ export function PathwayFigure() {
       </div>
       <figcaption className="mt-3 max-w-3xl font-serif text-sm leading-relaxed text-body">
         The motor pathway: brain, brainstem and spinal cord, and the biceps brachii with an 8 x 8 high-density surface EMG
-        grid. Anatomy credits are listed at the bottom of the page.
+        grid.
       </figcaption>
     </figure>
   )
