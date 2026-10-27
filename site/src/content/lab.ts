@@ -68,6 +68,7 @@ export const PROJECTS: Project[] = [
     slug: 'latent-inputs',
     title: 'Estimating the latent inputs controlling motor output',
     short: 'Invert a motoneuron’s firing to recover the commands it received.',
+    viz: 'RecruitmentRaster',
     body: 'Spinal motoneurons are the final common pathway through which all motor intent flows, converting central commands into muscle contractions and, ultimately, movement. Importantly, the firing behavior of motoneurons can be estimated with high-density surface electromyography (HDsEMG). We are developing approaches to estimate the synaptic inputs a motoneuron receives, along with its intrinsic properties, based on its firing behavior alone. Currently, this takes the form of a reverse engineering approach: we use the observed output behavior of a motoneuron and invert it to recover the underlying input commands, combining generative biophysical modeling with manifold optimization. Ongoing efforts are extending this framework with machine learning and AI methods.',
     subs: [],
   },
