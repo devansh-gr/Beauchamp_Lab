@@ -1,10 +1,9 @@
 import { Container } from '../ui/Reveal'
 import type { Project } from '../../content/types'
-import { ProjectViz } from './ProjectViz'
 import { RelatedPubs } from './RelatedPubs'
 
 export function ProjectSection({ project }: { project: Project }) {
-  const { num, slug, title, body, subs, viz } = project
+  const { num, slug, title, body, subs } = project
   return (
     <section id={slug} aria-labelledby={`${slug}-h`} className="scroll-mt-16 border-t border-steel py-14 first:border-t-0 sm:py-16">
       <Container>
@@ -22,12 +21,6 @@ export function ProjectSection({ project }: { project: Project }) {
             <p className="mt-2 font-serif leading-relaxed text-body">{s.body}</p>
           </div>
         ))}
-
-        {viz && (
-          <div className="mt-10 max-w-4xl">
-            <ProjectViz viz={viz} />
-          </div>
-        )}
 
         <RelatedPubs slug={slug} />
       </Container>

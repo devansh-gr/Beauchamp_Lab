@@ -1,6 +1,5 @@
 import { Suspense, useState } from 'react'
-import { NeuromodDial, PathwayStory, RecruitmentRaster } from '../viz'
-import type { Project } from '../../content/types'
+import { PathwayStory } from '../viz'
 import { Link } from 'react-router'
 import { linkCls } from '../ui/Reveal'
 
@@ -77,26 +76,5 @@ export function PathwayFigure() {
         grid.
       </figcaption>
     </figure>
-  )
-}
-
-export function ProjectViz({ viz }: { viz: Project['viz'] }) {
-  if (!viz) return null
-  const cls = 'h-[460px] w-full'
-  return (
-    <Suspense fallback={<div className={cls} aria-hidden />}>
-      <div className="border border-steel p-4 sm:p-6">
-        {viz === 'RecruitmentRaster' && (
-          <>
-            <RecruitmentRaster className={cls} />
-            <p className="mt-4 font-serif text-sm leading-relaxed text-body">
-              Simulated motor unit activity during a force ramp. Top, force as a percent of maximum voluntary contraction.
-              Middle, firing times of 15 motor units ordered by recruitment threshold. Bottom, smoothed firing rates.
-            </p>
-          </>
-        )}
-        {viz === 'NeuromodDial' && <NeuromodDial className={cls} />}
-      </div>
-    </Suspense>
   )
 }

@@ -26,7 +26,6 @@ export interface Project {
   short: string
   body: string
   subs: SubProject[]
-  viz?: 'RecruitmentRaster' | 'NeuromodDial'
 }
 
 export interface FocusArea {

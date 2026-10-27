@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { Container, Eyebrow, linkCls } from '../components/ui/Reveal'
-import { PathwayFigure } from '../components/research/ProjectViz'
+import { PathwayFigure } from '../components/research/PathwayFigure'
 import { Citation } from '../components/publications/Citation'
 import { FOCUS_AREAS, LAB, PI, PROJECTS } from '../content/lab'
 import { PUBLICATIONS } from '../content/publications'

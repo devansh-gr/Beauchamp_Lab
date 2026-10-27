@@ -8,7 +8,6 @@ const People = lazy(() => import('./pages/People'))
 const Publications = lazy(() => import('./pages/Publications'))
 const Join = lazy(() => import('./pages/Join'))
 const Contact = lazy(() => import('./pages/Contact'))
-const VizLab = lazy(() => import('./pages/VizLab'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 export default function App() {
@@ -23,7 +22,6 @@ export default function App() {
           <Route path="publications" element={<Publications />} />
           <Route path="join" element={<Join />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="lab" element={<VizLab />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
